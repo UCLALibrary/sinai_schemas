@@ -1,1 +1,1 @@
-# sinai_schemas
+# sinai-schemas
