@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/place.json",
+  "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/place.json",
   "title": "Place",
   "description": "A record for a place, including both physical spaces and mental/conceptual places that may not be locatable on a geospatial system",
   "type": "object",
@@ -1720,7 +1720,7 @@
       ],
       "items": {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/bib.json",
+        "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/bib.json",
         "title": "Bibliography",
         "description": "A bibliographic citation connected with an object or entity",
         "type": "object",
@@ -1922,9 +1922,11 @@
           },
           "contributor": {
             "description": "The person responsible for the intellectual contributions made to the record via this change",
-            "type": "string",
-            "minLength": 1,
-            "$comment": "TBD: Possibly revise the format or restrict to a set of ID-like values rather than entering name forms"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "unevaluatedItems": false
           },
           "added_by": {
             "description": "The user account responsible for editing the JSON record, likely supplied by the content management system",

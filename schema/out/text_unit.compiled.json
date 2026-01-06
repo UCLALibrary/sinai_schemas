@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/text_unit.json",
+  "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/text_unit.json",
   "title": "Text Unit",
   "description": "A Text Unit defines a piece or pieces of content presented in a given manuscript in a unified form; may contain one or more work witnesses (REVISE)",
   "type": "object",
@@ -57,7 +57,7 @@
       "type": "array",
       "items": {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/work_witness.json",
+        "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/work_witness.json",
         "title": "Work Witness",
         "description": "A Work Witness is a piece of content that forms part of a content unit within a manuscript and attests a distinct conceptual work",
         "type": "object",
@@ -248,7 +248,7 @@
             ],
             "items": {
               "$schema": "https://json-schema.org/draft/2020-12/schema",
-              "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/excerpt.json",
+              "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/excerpt.json",
               "title": "Excerpt",
               "description": "An excerpt from a larger work or text, such as the incipit",
               "type": "object",
@@ -258,6 +258,10 @@
                     {
                       "id": "prologue",
                       "label": "Prologue"
+                    },
+                    {
+                      "id": "heading",
+                      "label": "Heading"
                     },
                     {
                       "id": "incipit",
@@ -278,6 +282,10 @@
                     {
                       "id": "explicit",
                       "label": "Explicit"
+                    },
+                    {
+                      "id": "subscription",
+                      "label": "Subscription"
                     }
                   ],
                   "description": "A reference to a controlled term that is stored in a database table, referenced via ID but including a human-readable label",
@@ -414,7 +422,7 @@
             ],
             "items": {
               "$schema": "https://json-schema.org/draft/2020-12/schema",
-              "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/bib.json",
+              "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/bib.json",
               "title": "Bibliography",
               "description": "A bibliographic citation connected with an object or entity",
               "type": "object",
@@ -538,7 +546,7 @@
       ],
       "items": {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/paracontent.json",
+        "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/paracontent.json",
         "title": "Paracontent",
         "description": "An item of paracontent related to a manuscript object, codicological unit, or textual artifact",
         "type": "object",
@@ -690,7 +698,7 @@
             ],
             "items": {
               "$schema": "https://json-schema.org/draft/2020-12/schema",
-              "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/assoc_name.json",
+              "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/assoc_name.json",
               "title": "Associated Name",
               "description": "A person, group, or organization entity connected with an object via a given role",
               "type": "object",
@@ -758,7 +766,7 @@
             ],
             "items": {
               "$schema": "https://json-schema.org/draft/2020-12/schema",
-              "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/assoc_place.json",
+              "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/assoc_place.json",
               "title": "Associated Place",
               "description": "A place entity connected with an object via a given role",
               "type": "object",
@@ -826,7 +834,7 @@
             ],
             "items": {
               "$schema": "https://json-schema.org/draft/2020-12/schema",
-              "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/assoc_date.json",
+              "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/assoc_date.json",
               "title": "Associated Date",
               "description": "A date associated with an object, either attested or inferred through indirect means (paleography, etc.)",
               "type": "object",
@@ -962,7 +970,7 @@
       ],
       "items": {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/note.json",
+        "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/note.json",
         "title": "Note",
         "description": "A prose note of a specified type",
         "type": "object",
@@ -1009,7 +1017,7 @@
       ],
       "items": {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
-        "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/bib.json",
+        "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/bib.json",
         "title": "Bibliography",
         "description": "A bibliographic citation connected with an object or entity",
         "type": "object",
@@ -1160,9 +1168,11 @@
           },
           "contributor": {
             "description": "The person responsible for the intellectual contributions made to the record via this change",
-            "type": "string",
-            "minLength": 1,
-            "$comment": "TBD: Possibly revise the format or restrict to a set of ID-like values rather than entering name forms"
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "unevaluatedItems": false
           },
           "added_by": {
             "description": "The user account responsible for editing the JSON record, likely supplied by the content management system",
