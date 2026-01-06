@@ -25,12 +25,10 @@
       "type": "object",
       "properties": {
         "id": {
-          "type": "string",
-          "minLength": 1
+          "type": "string"
         },
         "label": {
-          "type": "string",
-          "minLength": 1
+          "type": "string"
         }
       },
       "required": [
@@ -40,26 +38,17 @@
       "unevaluatedProperties": false
     },
     "pref_name": {
-      "type": "string",
-      "minLength": 1
+      "type": "string"
     },
     "alt_name": {
-      "type": [
-        "array",
-        "null"
-      ],
+      "type": "array",
       "items": {
-        "type": "string",
-        "minLength": 1
+        "type": "string"
       },
       "unevaluatedItems": false
     },
     "desc": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "minLength": 1
+      "type": "string"
     },
     "gender": {
       "enum": [
@@ -80,12 +69,10 @@
       "type": "object",
       "properties": {
         "id": {
-          "type": "string",
-          "minLength": 1
+          "type": "string"
         },
         "label": {
-          "type": "string",
-          "minLength": 1
+          "type": "string"
         }
       },
       "required": [
@@ -102,8 +89,7 @@
       "unevaluatedProperties": false,
       "properties": {
         "value": {
-          "type": "string",
-          "minLength": 1
+          "type": "string"
         },
         "iso": {
           "type": "object",
@@ -113,10 +99,7 @@
               "minLength": 4
             },
             "not_after": {
-              "type": [
-                "string",
-                "null"
-              ],
+              "type": "string",
               "minLength": 4
             }
           },
@@ -135,8 +118,7 @@
       "unevaluatedProperties": false,
       "properties": {
         "value": {
-          "type": "string",
-          "minLength": 1
+          "type": "string"
         },
         "iso": {
           "type": "object",
@@ -146,10 +128,7 @@
               "minLength": 4
             },
             "not_after": {
-              "type": [
-                "string",
-                "null"
-              ],
+              "type": "string",
               "minLength": 4
             }
           },
@@ -168,8 +147,7 @@
       "unevaluatedProperties": false,
       "properties": {
         "value": {
-          "type": "string",
-          "minLength": 1
+          "type": "string"
         },
         "iso": {
           "type": "object",
@@ -179,10 +157,7 @@
               "minLength": 4
             },
             "not_after": {
-              "type": [
-                "string",
-                "null"
-              ],
+              "type": "string",
               "minLength": 4
             }
           },
@@ -194,22 +169,17 @@
       }
     },
     "rel_con": {
-      "type": [
-        "array",
-        "null"
-      ],
+      "type": "array",
       "items": {
-        "description": "A related concept to a given entity provided by another authority file. May be connected via a skos:closeMatch property",
+        "description": "A related concept to a given entity provided by another authority file. May be understood via a skos:closeMatch property",
         "type": "object",
         "properties": {
           "label": {
-            "type": "string",
-            "minLength": 1
+            "type": "string"
           },
           "uri": {
             "type": "string",
-            "format": "uri",
-            "minLength": 1
+            "format": "uri"
           },
           "source": {
             "enum": [
@@ -233,21 +203,16 @@
       "unevaluatedItems": false
     },
     "refno": {
-      "type": [
-        "array",
-        "null"
-      ],
+      "type": "array",
       "items": {
         "description": "A reference number in a standard reference work, such as the Corpus Clavium Graecorum (CPG)",
         "type": "object",
         "properties": {
           "label": {
-            "type": "string",
-            "minLength": 1
+            "type": "string"
           },
           "idno": {
-            "type": "string",
-            "minLength": 1
+            "type": "string"
           },
           "source": {
             "enum": [
@@ -267,10 +232,7 @@
       "unevaluatedItems": false
     },
     "bib": {
-      "type": [
-        "array",
-        "null"
-      ],
+      "type": "array",
       "items": {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
         "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/bib.json",
@@ -293,12 +255,10 @@
             "type": "object",
             "properties": {
               "id": {
-                "type": "string",
-                "minLength": 1
+                "type": "string"
               },
               "label": {
-                "type": "string",
-                "minLength": 1
+                "type": "string"
               }
             },
             "required": [
@@ -308,31 +268,16 @@
             "unevaluatedProperties": false
           },
           "range": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "minLength": 1
+            "type": "string"
           },
           "alt_shelf": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "minLength": 1
+            "type": "string"
           },
           "url": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "minLength": 1
+            "type": "string"
           },
           "note": {
-            "type": [
-              "array",
-              "null"
-            ],
+            "type": "array",
             "items": {
               "type": "string"
             },
@@ -361,8 +306,7 @@
         "then": {
           "properties": {
             "url": {
-              "type": "string",
-              "minLength": 1
+              "type": "string"
             },
             "id": {
               "type": "string",
@@ -382,20 +326,14 @@
       "unevaluatedItems": false
     },
     "note": {
-      "type": [
-        "array",
-        "null"
-      ],
+      "type": "array",
       "items": {
         "type": "string"
       },
       "unevaluatedItems": false
     },
     "rel_agent": {
-      "type": [
-        "array",
-        "null"
-      ],
+      "type": "array",
       "items": {
         "type": "object",
         "allOf": [
@@ -408,10 +346,7 @@
                 "pattern": "^ark:/21198/([a-z]|[0-9])+"
               },
               "source": {
-                "type": [
-                  "array",
-                  "null"
-                ],
+                "type": "array",
                 "items": {
                   "type": "string"
                 },
@@ -441,12 +376,10 @@
               "type": "object",
               "properties": {
                 "id": {
-                  "type": "string",
-                  "minLength": 1
+                  "type": "string"
                 },
                 "label": {
-                  "type": "string",
-                  "minLength": 1
+                  "type": "string"
                 }
               },
               "required": [
@@ -466,10 +399,7 @@
       "unevaluatedItems": false
     },
     "rel_place": {
-      "type": [
-        "array",
-        "null"
-      ],
+      "type": "array",
       "items": {
         "type": "object",
         "allOf": [
@@ -482,10 +412,7 @@
                 "pattern": "^ark:/21198/([a-z]|[0-9])+"
               },
               "source": {
-                "type": [
-                  "array",
-                  "null"
-                ],
+                "type": "array",
                 "items": {
                   "type": "string"
                 },
@@ -515,12 +442,10 @@
               "type": "object",
               "properties": {
                 "id": {
-                  "type": "string",
-                  "minLength": 1
+                  "type": "string"
                 },
                 "label": {
-                  "type": "string",
-                  "minLength": 1
+                  "type": "string"
                 }
               },
               "required": [
@@ -539,27 +464,13 @@
       },
       "unevaluatedItems": false
     },
-    "internal": {
-      "type": [
-        "array",
-        "null"
-      ],
-      "items": {
-        "type": "string"
-      },
-      "unevaluatedItems": false
-    },
     "cataloguer": {
-      "type": [
-        "array",
-        "null"
-      ],
+      "type": "array",
       "items": {
         "type": "object",
         "properties": {
           "message": {
-            "type": "string",
-            "minLength": 1
+            "type": "string"
           },
           "contributor": {
             "description": "The person responsible for the intellectual contributions made to the record via this change",
@@ -571,14 +482,11 @@
           },
           "added_by": {
             "description": "The user account responsible for editing the JSON record, likely supplied by the content management system",
-            "type": "string",
-            "minLength": 1,
-            "$comment": "TBD: Possibly revise the format or restrict to a set of ID-like values rather than entering name forms"
+            "type": "string"
           },
           "timestamp": {
             "type": "string",
-            "format": "date-time",
-            "minLength": 1
+            "format": "date-time"
           }
         },
         "required": [

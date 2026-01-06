@@ -2,6 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/layer.json",
   "title": "Inscribed Layer",
+  "description": "A single material layer of writing, illustration, decoration, or other markings that conveys the intellectual and creative content of a scribal production unit",
   "type": "object",
   "properties": {
     "ark": {
@@ -35,12 +36,10 @@
       "type": "object",
       "properties": {
         "id": {
-          "type": "string",
-          "minLength": 1
+          "type": "string"
         },
         "label": {
-          "type": "string",
-          "minLength": 1
+          "type": "string"
         }
       },
       "required": [
@@ -50,28 +49,17 @@
       "unevaluatedProperties": false
     },
     "label": {
-      "type": "string",
-      "minLength": 1
+      "type": "string"
     },
     "locus": {
-      "type": "string",
-      "minLength": 1,
-      "$comment": "Can use format to restrain to regex for, e.g., 'ff. x-y'"
+      "type": "string"
     },
     "summary": {
-      "type": [
-        "string",
-        "null"
-      ],
-      "minLength": 1
+      "type": "string"
     },
     "extent": {
       "description": "The extent, expressed in number of folios, which comprise the manuscript object",
-      "type": [
-        "string",
-        "null"
-      ],
-      "minLength": 1
+      "type": "string"
     },
     "writing": {
       "type": "array",
@@ -88,12 +76,10 @@
               "type": "object",
               "properties": {
                 "id": {
-                  "type": "string",
-                  "minLength": 1
+                  "type": "string"
                 },
                 "label": {
-                  "type": "string",
-                  "minLength": 1
+                  "type": "string"
                 },
                 "writing_system": {
                   "type": "string"
@@ -110,15 +96,10 @@
             "unevaluatedItems": false
           },
           "locus": {
-            "type": "string",
-            "minLength": 1,
-            "$comment": "Can use format to restrain to regex for, e.g., 'ff. x-y'"
+            "type": "string"
           },
           "note": {
-            "type": [
-              "array",
-              "null"
-            ],
+            "type": "array",
             "items": {
               "type": "string"
             },
@@ -143,23 +124,17 @@
         "type": "object",
         "properties": {
           "locus": {
-            "type": "string",
-            "minLength": 1,
-            "$comment": "Can use format to restrain to regex for, e.g., 'ff. x-y'"
+            "type": "string"
           },
           "color": {
             "type": "array",
             "items": {
               "type": "string"
             },
-            "unevaluatedItems": false,
-            "$comment": "Perhaps make this an enum to constrain color values?"
+            "unevaluatedItems": false
           },
           "note": {
-            "type": [
-              "array",
-              "null"
-            ],
+            "type": "array",
             "items": {
               "type": "string"
             },
@@ -171,10 +146,7 @@
       "unevaluatedItems": false
     },
     "layout": {
-      "type": [
-        "array",
-        "null"
-      ],
+      "type": "array",
       "items": {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
         "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/layout.json",
@@ -183,9 +155,7 @@
         "type": "object",
         "properties": {
           "locus": {
-            "type": "string",
-            "minLength": 1,
-            "$comment": "Can use format to restrain to regex for, e.g., 'ff. x-y'"
+            "type": "string"
           },
           "columns": {
             "type": "string"
@@ -195,17 +165,10 @@
           },
           "dim": {
             "description": "A string expression of an object's dimensions, whether manuscript block, folio, or writing area",
-            "type": [
-              "string",
-              "null"
-            ],
-            "minLength": 1
+            "type": "string"
           },
           "note": {
-            "type": [
-              "array",
-              "null"
-            ],
+            "type": "array",
             "items": {
               "type": "string"
             },
@@ -227,13 +190,10 @@
             "pattern": "^ark:/21198/([a-z]|[0-9])+"
           },
           "label": {
-            "type": "string",
-            "minLength": 1
+            "type": "string"
           },
           "locus": {
-            "type": "string",
-            "minLength": 1,
-            "$comment": "Can use format to restrain to regex for, e.g., 'ff. x-y'"
+            "type": "string"
           }
         },
         "required": [
@@ -246,15 +206,12 @@
       "unevaluatedItems": false
     },
     "para": {
-      "type": [
-        "array",
-        "null"
-      ],
+      "type": "array",
       "items": {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
         "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/paracontent.json",
         "title": "Paracontent",
-        "description": "An item of paracontent related to a manuscript object, codicological unit, or textual artifact",
+        "description": "An item of paracontent related to a manuscript object, inscribed layer, or text unit; or a piece of guest content incidentally connected to an object",
         "type": "object",
         "properties": {
           "type": {
@@ -280,12 +237,10 @@
             "type": "object",
             "properties": {
               "id": {
-                "type": "string",
-                "minLength": 1
+                "type": "string"
               },
               "label": {
-                "type": "string",
-                "minLength": 1
+                "type": "string"
               }
             },
             "required": [
@@ -301,12 +256,10 @@
               "type": "object",
               "properties": {
                 "id": {
-                  "type": "string",
-                  "minLength": 1
+                  "type": "string"
                 },
                 "label": {
-                  "type": "string",
-                  "minLength": 1
+                  "type": "string"
                 }
               },
               "required": [
@@ -318,9 +271,7 @@
             "unevaluatedItems": false
           },
           "locus": {
-            "type": "string",
-            "minLength": 1,
-            "$comment": "Can use format to restrain to regex for, e.g., 'ff. x-y'"
+            "type": "string"
           },
           "lang": {
             "type": "array",
@@ -329,12 +280,10 @@
               "type": "object",
               "properties": {
                 "id": {
-                  "type": "string",
-                  "minLength": 1
+                  "type": "string"
                 },
                 "label": {
-                  "type": "string",
-                  "minLength": 1
+                  "type": "string"
                 }
               },
               "required": [
@@ -352,12 +301,10 @@
               "type": "object",
               "properties": {
                 "id": {
-                  "type": "string",
-                  "minLength": 1
+                  "type": "string"
                 },
                 "label": {
-                  "type": "string",
-                  "minLength": 1
+                  "type": "string"
                 },
                 "writing_system": {
                   "type": "string"
@@ -374,39 +321,25 @@
             "unevaluatedItems": false
           },
           "label": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "minLength": 1
+            "type": "string"
           },
           "as_written": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "minLength": 1
+            "type": "string"
           },
           "translation": {
-            "type": [
-              "array",
-              "null"
-            ],
+            "type": "array",
             "items": {
               "type": "string"
             },
             "unevaluatedItems": false
           },
           "assoc_name": {
-            "type": [
-              "array",
-              "null"
-            ],
+            "type": "array",
             "items": {
               "$schema": "https://json-schema.org/draft/2020-12/schema",
               "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/assoc_name.json",
               "title": "Associated Name",
-              "description": "A person, group, or organization entity connected with an object via a given role",
+              "description": "A person, group, or organization entity (i.e., Agent) connected with an object via a given role",
               "type": "object",
               "properties": {
                 "id": {
@@ -415,30 +348,20 @@
                   "pattern": "^ark:/21198/([a-z]|[0-9])+"
                 },
                 "value": {
-                  "type": [
-                    "string",
-                    "null"
-                  ],
-                  "minLength": 1
+                  "type": "string"
                 },
                 "as_written": {
-                  "type": [
-                    "string",
-                    "null"
-                  ],
-                  "minLength": 1
+                  "type": "string"
                 },
                 "role": {
                   "description": "A reference to a controlled term that is stored in a database table, referenced via ID but including a human-readable label",
                   "type": "object",
                   "properties": {
                     "id": {
-                      "type": "string",
-                      "minLength": 1
+                      "type": "string"
                     },
                     "label": {
-                      "type": "string",
-                      "minLength": 1
+                      "type": "string"
                     }
                   },
                   "required": [
@@ -448,10 +371,7 @@
                   "unevaluatedProperties": false
                 },
                 "note": {
-                  "type": [
-                    "array",
-                    "null"
-                  ],
+                  "type": "array",
                   "items": {
                     "type": "string"
                   },
@@ -466,15 +386,12 @@
             "unevaluatedItems": false
           },
           "assoc_place": {
-            "type": [
-              "array",
-              "null"
-            ],
+            "type": "array",
             "items": {
               "$schema": "https://json-schema.org/draft/2020-12/schema",
               "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/assoc_place.json",
               "title": "Associated Place",
-              "description": "A place entity connected with an object via a given role",
+              "description": "A place entity connected with an object via an event in the object's life cycle",
               "type": "object",
               "properties": {
                 "id": {
@@ -483,30 +400,20 @@
                   "pattern": "^ark:/21198/([a-z]|[0-9])+"
                 },
                 "value": {
-                  "type": [
-                    "string",
-                    "null"
-                  ],
-                  "minLength": 1
+                  "type": "string"
                 },
                 "as_written": {
-                  "type": [
-                    "string",
-                    "null"
-                  ],
-                  "minLength": 1
+                  "type": "string"
                 },
                 "event": {
                   "description": "A reference to a controlled term that is stored in a database table, referenced via ID but including a human-readable label",
                   "type": "object",
                   "properties": {
                     "id": {
-                      "type": "string",
-                      "minLength": 1
+                      "type": "string"
                     },
                     "label": {
-                      "type": "string",
-                      "minLength": 1
+                      "type": "string"
                     }
                   },
                   "required": [
@@ -516,10 +423,7 @@
                   "unevaluatedProperties": false
                 },
                 "note": {
-                  "type": [
-                    "array",
-                    "null"
-                  ],
+                  "type": "array",
                   "items": {
                     "type": "string"
                   },
@@ -534,10 +438,7 @@
             "unevaluatedItems": false
           },
           "assoc_date": {
-            "type": [
-              "array",
-              "null"
-            ],
+            "type": "array",
             "items": {
               "$schema": "https://json-schema.org/draft/2020-12/schema",
               "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/assoc_date.json",
@@ -549,8 +450,7 @@
                   "type": "object",
                   "properties": {
                     "value": {
-                      "type": "string",
-                      "minLength": 1
+                      "type": "string"
                     },
                     "iso": {
                       "type": "object",
@@ -560,10 +460,7 @@
                           "minLength": 4
                         },
                         "not_after": {
-                          "type": [
-                            "string",
-                            "null"
-                          ],
+                          "type": "string",
                           "minLength": 4
                         }
                       },
@@ -584,12 +481,10 @@
                   "type": "object",
                   "properties": {
                     "id": {
-                      "type": "string",
-                      "minLength": 1
+                      "type": "string"
                     },
                     "label": {
-                      "type": "string",
-                      "minLength": 1
+                      "type": "string"
                     }
                   },
                   "required": [
@@ -599,17 +494,10 @@
                   "unevaluatedProperties": false
                 },
                 "as_written": {
-                  "type": [
-                    "string",
-                    "null"
-                  ],
-                  "minLength": 1
+                  "type": "string"
                 },
                 "note": {
-                  "type": [
-                    "array",
-                    "null"
-                  ],
+                  "type": "array",
                   "items": {
                     "type": "string"
                   },
@@ -624,10 +512,7 @@
             "unevaluatedItems": false
           },
           "note": {
-            "type": [
-              "array",
-              "null"
-            ],
+            "type": "array",
             "items": {
               "type": "string"
             },
@@ -644,10 +529,7 @@
       "unevaluatedItems": false
     },
     "assoc_date": {
-      "type": [
-        "array",
-        "null"
-      ],
+      "type": "array",
       "items": {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
         "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/assoc_date.json",
@@ -659,8 +541,7 @@
             "type": "object",
             "properties": {
               "value": {
-                "type": "string",
-                "minLength": 1
+                "type": "string"
               },
               "iso": {
                 "type": "object",
@@ -670,10 +551,7 @@
                     "minLength": 4
                   },
                   "not_after": {
-                    "type": [
-                      "string",
-                      "null"
-                    ],
+                    "type": "string",
                     "minLength": 4
                   }
                 },
@@ -694,12 +572,10 @@
             "type": "object",
             "properties": {
               "id": {
-                "type": "string",
-                "minLength": 1
+                "type": "string"
               },
               "label": {
-                "type": "string",
-                "minLength": 1
+                "type": "string"
               }
             },
             "required": [
@@ -709,17 +585,10 @@
             "unevaluatedProperties": false
           },
           "as_written": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "minLength": 1
+            "type": "string"
           },
           "note": {
-            "type": [
-              "array",
-              "null"
-            ],
+            "type": "array",
             "items": {
               "type": "string"
             },
@@ -734,15 +603,12 @@
       "unevaluatedItems": false
     },
     "assoc_name": {
-      "type": [
-        "array",
-        "null"
-      ],
+      "type": "array",
       "items": {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
         "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/assoc_name.json",
         "title": "Associated Name",
-        "description": "A person, group, or organization entity connected with an object via a given role",
+        "description": "A person, group, or organization entity (i.e., Agent) connected with an object via a given role",
         "type": "object",
         "properties": {
           "id": {
@@ -751,30 +617,20 @@
             "pattern": "^ark:/21198/([a-z]|[0-9])+"
           },
           "value": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "minLength": 1
+            "type": "string"
           },
           "as_written": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "minLength": 1
+            "type": "string"
           },
           "role": {
             "description": "A reference to a controlled term that is stored in a database table, referenced via ID but including a human-readable label",
             "type": "object",
             "properties": {
               "id": {
-                "type": "string",
-                "minLength": 1
+                "type": "string"
               },
               "label": {
-                "type": "string",
-                "minLength": 1
+                "type": "string"
               }
             },
             "required": [
@@ -784,10 +640,7 @@
             "unevaluatedProperties": false
           },
           "note": {
-            "type": [
-              "array",
-              "null"
-            ],
+            "type": "array",
             "items": {
               "type": "string"
             },
@@ -802,15 +655,12 @@
       "unevaluatedItems": false
     },
     "assoc_place": {
-      "type": [
-        "array",
-        "null"
-      ],
+      "type": "array",
       "items": {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
         "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/assoc_place.json",
         "title": "Associated Place",
-        "description": "A place entity connected with an object via a given role",
+        "description": "A place entity connected with an object via an event in the object's life cycle",
         "type": "object",
         "properties": {
           "id": {
@@ -819,30 +669,20 @@
             "pattern": "^ark:/21198/([a-z]|[0-9])+"
           },
           "value": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "minLength": 1
+            "type": "string"
           },
           "as_written": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "minLength": 1
+            "type": "string"
           },
           "event": {
             "description": "A reference to a controlled term that is stored in a database table, referenced via ID but including a human-readable label",
             "type": "object",
             "properties": {
               "id": {
-                "type": "string",
-                "minLength": 1
+                "type": "string"
               },
               "label": {
-                "type": "string",
-                "minLength": 1
+                "type": "string"
               }
             },
             "required": [
@@ -852,10 +692,7 @@
             "unevaluatedProperties": false
           },
           "note": {
-            "type": [
-              "array",
-              "null"
-            ],
+            "type": "array",
             "items": {
               "type": "string"
             },
@@ -870,21 +707,16 @@
       "unevaluatedItems": false
     },
     "features": {
-      "type": [
-        "array",
-        "null"
-      ],
+      "type": "array",
       "items": {
         "description": "A reference to a controlled term that is stored in a database table, referenced via ID but including a human-readable label",
         "type": "object",
         "properties": {
           "id": {
-            "type": "string",
-            "minLength": 1
+            "type": "string"
           },
           "label": {
-            "type": "string",
-            "minLength": 1
+            "type": "string"
           }
         },
         "required": [
@@ -896,10 +728,7 @@
       "unevaluatedItems": false
     },
     "related_mss": {
-      "type": [
-        "array",
-        "null"
-      ],
+      "type": "array",
       "items": {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
         "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/related_mss.json",
@@ -926,12 +755,10 @@
             "type": "object",
             "properties": {
               "id": {
-                "type": "string",
-                "minLength": 1
+                "type": "string"
               },
               "label": {
-                "type": "string",
-                "minLength": 1
+                "type": "string"
               }
             },
             "required": [
@@ -941,14 +768,10 @@
             "unevaluatedProperties": false
           },
           "label": {
-            "type": "string",
-            "minLength": 1
+            "type": "string"
           },
           "note": {
-            "type": [
-              "array",
-              "null"
-            ],
+            "type": "array",
             "items": {
               "type": "string"
             },
@@ -960,8 +783,7 @@
               "type": "object",
               "properties": {
                 "label": {
-                  "type": "string",
-                  "minLength": 1
+                  "type": "string"
                 },
                 "id": {
                   "description": "A unique Archival Resource Key (ARK)",
@@ -969,15 +791,10 @@
                   "pattern": "^ark:/21198/([a-z]|[0-9])+"
                 },
                 "url": {
-                  "type": [
-                    "string",
-                    "null"
-                  ],
-                  "format": "uri",
-                  "minLength": 1
+                  "type": "string",
+                  "format": "uri"
                 }
               },
-              "$comment": "Possible x-or logic for id and url",
               "required": [
                 "label"
               ],
@@ -997,10 +814,7 @@
       "unevaluatedItems": false
     },
     "note": {
-      "type": [
-        "array",
-        "null"
-      ],
+      "type": "array",
       "items": {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
         "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/note.json",
@@ -1013,12 +827,10 @@
             "type": "object",
             "properties": {
               "id": {
-                "type": "string",
-                "minLength": 1
+                "type": "string"
               },
               "label": {
-                "type": "string",
-                "minLength": 1
+                "type": "string"
               }
             },
             "required": [
@@ -1028,11 +840,7 @@
             "unevaluatedProperties": false
           },
           "value": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "minLength": 1
+            "type": "string"
           }
         },
         "required": [
@@ -1044,10 +852,7 @@
       "unevaluatedItems": false
     },
     "bib": {
-      "type": [
-        "array",
-        "null"
-      ],
+      "type": "array",
       "items": {
         "$schema": "https://json-schema.org/draft/2020-12/schema",
         "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/bib.json",
@@ -1070,12 +875,10 @@
             "type": "object",
             "properties": {
               "id": {
-                "type": "string",
-                "minLength": 1
+                "type": "string"
               },
               "label": {
-                "type": "string",
-                "minLength": 1
+                "type": "string"
               }
             },
             "required": [
@@ -1085,31 +888,16 @@
             "unevaluatedProperties": false
           },
           "range": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "minLength": 1
+            "type": "string"
           },
           "alt_shelf": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "minLength": 1
+            "type": "string"
           },
           "url": {
-            "type": [
-              "string",
-              "null"
-            ],
-            "minLength": 1
+            "type": "string"
           },
           "note": {
-            "type": [
-              "array",
-              "null"
-            ],
+            "type": "array",
             "items": {
               "type": "string"
             },
@@ -1138,8 +926,7 @@
         "then": {
           "properties": {
             "url": {
-              "type": "string",
-              "minLength": 1
+              "type": "string"
             },
             "id": {
               "type": "string",
@@ -1188,16 +975,12 @@
       "unevaluatedProperties": false
     },
     "cataloguer": {
-      "type": [
-        "array",
-        "null"
-      ],
+      "type": "array",
       "items": {
         "type": "object",
         "properties": {
           "message": {
-            "type": "string",
-            "minLength": 1
+            "type": "string"
           },
           "contributor": {
             "description": "The person responsible for the intellectual contributions made to the record via this change",
@@ -1209,14 +992,11 @@
           },
           "added_by": {
             "description": "The user account responsible for editing the JSON record, likely supplied by the content management system",
-            "type": "string",
-            "minLength": 1,
-            "$comment": "TBD: Possibly revise the format or restrict to a set of ID-like values rather than entering name forms"
+            "type": "string"
           },
           "timestamp": {
             "type": "string",
-            "format": "date-time",
-            "minLength": 1
+            "format": "date-time"
           }
         },
         "required": [
@@ -1245,13 +1025,6 @@
         "pattern": "^ark:/21198/([a-z]|[0-9])+"
       },
       "minItems": 1,
-      "unevaluatedItems": false
-    },
-    "internal": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      },
       "unevaluatedItems": false
     }
   },
