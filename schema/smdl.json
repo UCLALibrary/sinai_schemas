@@ -180,6 +180,9 @@
                     "type": {
                         "$ref": "#/$defs/controlled_term"
                     },
+                    "label": {
+                        "type": "string"
+                    },
                     "text_direction": {
                         "type": "string"
                     },
@@ -193,7 +196,8 @@
                 },
                 "required": [
                     "manifest",
-                    "type"
+                    "type",
+                    "label"
                 ],
                 "unevaluatedProperties": false
             },
