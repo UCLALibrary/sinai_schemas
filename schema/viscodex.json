@@ -1,0 +1,27 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/viscodex.json",
+    "title": "Viscodex",
+    "description": "A link to a Viscodex visualization of the object",
+    "type": "object",
+        "properties": {
+            "type": {
+                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/enums.json#/$defs/viscodex_types"
+            },
+            "label": {
+                "type": "string",
+                "minLength": 1
+            },
+            "url": {
+                "type": "string",
+                "format": "uri",
+                "minLength": 1
+            }
+        },
+        "required": [
+            "type",
+            "label",
+            "url"
+        ],
+        "unevaluatedProperties": false
+}

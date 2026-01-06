@@ -1,0 +1,59 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/related_mss.json",
+    "title": "Related Manuscripts",
+    "description": "A set of manuscripts that share a relation to the object context in which they are declared",
+    "type": "object",
+    "properties": {
+        "type": {
+            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/enums.json#/$defs/related_mss_types"
+        },
+        "label": {
+            "type": "string",
+            "minLength": 1
+        },
+        "note": {
+            "type": ["array", "null"],
+            "items": {
+                "type": "string"
+            },
+            "unevaluatedItems": false
+        },
+        "mss": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "label": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "id": {
+                        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/ark"
+                    },
+                    "url": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "format": "uri",
+                        "minLength": 1
+                    }
+                },
+                "$comment": "Possible x-or logic for id and url",
+                "required": [
+                    "label"
+                ],
+                "unevaluatedProperties": false
+            },
+            "minItems": 1,
+            "unevaluatedItems": false
+        }
+    },
+    "required": [
+        "label",
+        "type",
+        "mss"
+    ],
+    "unevaluatedProperties": false
+}

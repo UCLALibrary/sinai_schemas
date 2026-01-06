@@ -1,0 +1,36 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/excerpt.json",
+    "title": "Excerpt",
+    "description": "An excerpt from a larger work or text, such as the incipit",
+    "type": "object",
+    "properties": {
+        "type": {
+            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/enums.json#/$defs/excerpt_types"
+        },
+        "locus": {
+            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/locus"
+        },
+        "as_written": {
+            "type": "string",
+            "minLength": 1
+        },
+        "translation": {
+            "type": ["array", "null"],
+            "items": {
+                "type": "string"
+            },
+            "unevaluatedItems": false
+        },
+        "note": {
+            "type": ["array", "null"],
+            "items": {
+                "type": "string"
+            },
+            "unevaluatedItems": false
+        }
+    },
+    "required": [
+        "type"
+    ]
+}

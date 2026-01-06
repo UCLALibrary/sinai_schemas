@@ -1,0 +1,158 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/agent.json",
+    "title": "Agent",
+    "description": "A record for an agent, either an individual or an organization, capable of acting in the production of material objects or creation of conceptual works",
+    "type": "object",
+    "properties": {
+        "ark": {
+            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/ark"
+        },
+        "type": {
+            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/enums.json#/$defs/agent_types"
+        },
+        "pref_name": {
+            "type": "string",
+            "minLength": 1
+        },
+        "alt_name": {
+            "type": ["array", "null"],
+            "items": {
+                "type": "string",
+                "minLength": 1
+            },
+            "unevaluatedItems": false        
+        },
+        "desc": {
+            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/summary"
+        },
+        "gender": {
+            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/enums.json#/$defs/genders"
+        },
+        "birth": {
+            "type": "object",
+            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/date_core",
+            "required": ["iso"],
+            "unevaluatedProperties": false
+        },
+        "death": {
+            "type": "object",
+            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/date_core",
+            "required": ["iso"],
+            "unevaluatedProperties": false
+        },
+        "floruit": {
+            "type": "object",
+            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/date_core",
+            "required": ["iso"],
+            "unevaluatedProperties": false
+        },
+        "rel_con": {
+            "type": ["array", "null"],
+            "items": {
+                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/rel_con"
+            },
+            "unevaluatedItems": false
+        },
+        "refno": {
+            "type": ["array", "null"],
+            "items": {
+                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/refno"
+            },
+            "unevaluatedItems": false
+        },
+        "bib": {
+            "type": [
+                "array",
+                "null"
+            ],
+            "items": {
+                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/bib.json"
+            },
+            "unevaluatedItems": false
+        },
+        "note": {
+            "type": ["array", "null"],
+            "items": {
+                "type": "string"
+            },
+            "unevaluatedItems": false
+        },
+        "rel_agent": {
+            "type": ["array", "null"],
+            "items": {
+                "type": "object",
+                "allOf": [
+                    {
+                        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/rel_entity_core"
+                    }
+                ],
+                "properties": {
+                    "rel": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/enums.json#/$defs/agent_agent_rels"
+                        },
+                        "unevaluatedItems": false
+                    }
+                },
+                "required": [
+                    "rel"
+                ],
+                "unevaluatedProperties": false
+            },
+            "unevaluatedItems": false
+        },
+        "rel_place": {
+            "type": ["array", "null"],
+            "items": {
+                "type": "object",
+                "allOf": [
+                    {
+                        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/rel_entity_core"
+                    }
+                ],
+                "properties": {
+                    "rel": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/enums.json#/$defs/agent_place_rels"
+                        },
+                        "unevaluatedItems": false
+                    }
+                },
+                "required": [
+                    "rel"
+                ],
+                "unevaluatedProperties": false
+            },
+            "unevaluatedItems": false
+        },
+        "internal": {
+            "type": [
+                "array",
+                "null"
+            ],
+            "items": {
+                "type": "string"
+            },
+            "unevaluatedItems": false
+        },
+        "cataloguer": {
+            "type": [
+                "array",
+                "null"
+            ],
+            "items": {
+                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/change_log_entry"
+            },
+            "unevaluatedItems": false
+        }
+    },
+    "required": [
+        "ark",
+        "type",
+        "pref_name"
+    ],
+    "unevaluatedProperties": false
+}

@@ -1,0 +1,35 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/assoc_date.json",
+    "title": "Associated Date",
+    "description": "A date associated with an object, either attested or inferred through indirect means (paleography, etc.)",
+    "type": "object",
+    "allOf": [
+        {
+            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/date_core"
+        }
+    ],
+    "properties": {
+        "type": {
+            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/controlled_term"
+        },
+        "as_written": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "minLength": 1
+        },
+        "note": {
+            "type": ["array", "null"],
+            "items": {
+                "type": "string"
+            },
+            "unevaluatedItems": false
+        }
+    },
+    "required": [
+        "type"
+    ],
+    "unevaluatedProperties": false
+}

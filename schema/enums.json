@@ -1,0 +1,551 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/enums.json",
+    "title": "Utilities",
+    "description": "A collection of sub-schemas containing the controlled vocabularies and enumerated value lists for the Sinai Manuscripts Data Portal",
+    "type": "null",
+    "$defs": {
+      "agent_agent_rels": {
+        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/controlled_term",
+        "enum": [
+          {
+            "id": "family-member",
+            "label": "Family Member"
+          },
+          {
+            "id": "member-of",
+            "label": "Member Of"
+          }
+        ]
+      },
+      "agent_place_rels": {
+        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/controlled_term",
+        "enum": [
+          {
+            "id": "birth",
+            "label": "Place of Birth"
+          },
+          {
+            "id": "death",
+            "label": "Place of Death"
+          }
+        ]
+      },
+      "agent_types": {
+        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/controlled_term",
+        "enum": [
+          {
+            "id": "person",
+            "label": "Person"
+          },
+          {
+            "id": "organization",
+            "label": "Organization"
+          }
+        ]
+      },
+      "creator_roles": {
+        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/controlled_term",
+        "enum": [
+          {
+            "id": "author",
+            "label": "Author"
+          },
+          {
+            "id": "editor",
+            "label": "Editor"
+          },
+          {
+            "id": "translator",
+            "label": "Translator"
+          }
+        ]
+      },
+      "excerpt_types": {
+        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/controlled_term",
+        "enum": [
+          {
+            "id": "prologue",
+            "label": "Prologue"
+          },
+          {
+            "id": "incipit",
+            "label": "Incipit"
+          },
+          {
+            "id": "inc-mut",
+            "label": "First Preserved Line"
+          },
+          {
+            "id": "quote",
+            "label": "Quote"
+          },
+          {
+            "id": "des-mut",
+            "label": "Last Preserved Line"
+          },
+          {
+            "id": "explicit",
+            "label": "Explicit"
+          }
+        ]
+      },
+      "genders": {
+        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/controlled_term",
+        "enum": [
+          {
+            "id": "man",
+            "label": "Man"
+          },
+          {
+            "id": "woman",
+            "label": "Woman"
+          },
+          {
+            "id": "other",
+            "label": "Other"
+          }
+        ]
+      },
+      "genres": {
+        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/controlled_term",
+        "enum": [
+          {
+            "id": "account-books",
+            "label": "Account books"
+          },
+          {
+            "id": "apocrypha",
+            "label": "Apocrypha"
+          },
+          {
+            "id": "apophthegmata",
+            "label": "Apophthegmata"
+          },
+          {
+            "id": "biblical-texts",
+            "label": "Biblical texts"
+          },
+          {
+            "id": "blessings",
+            "label": "Blessings"
+          },
+          {
+            "id": "calendars",
+            "label": "Calendars"
+          },
+          {
+            "id": "canon-law",
+            "label": "Canon law"
+          },
+          {
+            "id": "charters",
+            "label": "Charters"
+          },
+          {
+            "id": "commentaries",
+            "label": "Commentaries"
+          },
+          {
+            "id": "dictionaries",
+            "label": "Dictionaries"
+          },
+          {
+            "id": "gospel-books",
+            "label": "Gospel books"
+          },
+          {
+            "id": "hagiographies",
+            "label": "Hagiographies"
+          },
+          {
+            "id": "historical-works",
+            "label": "Historical works"
+          },
+          {
+            "id": "hymnals",
+            "label": "Hymnals"
+          },
+          {
+            "id": "lectionaries",
+            "label": "Lectionaries"
+          },
+          {
+            "id": "liturgical-texts",
+            "label": "Liturgical texts"
+          },
+          {
+            "id": "martyrologies",
+            "label": "Martyrologies"
+          },
+          {
+            "id": "mimars",
+            "label": "Mimars"
+          },
+          {
+            "id": "philosophical-works",
+            "label": "Philosophical works"
+          },
+          {
+            "id": "poetry",
+            "label": "Poetry"
+          },
+          {
+            "id": "prayers",
+            "label": "Prayers"
+          },
+          {
+            "id": "scientific-works",
+            "label": "Scientific works"
+          },
+          {
+            "id": "sermons",
+            "label": "Sermons"
+          },
+          {
+            "id": "theological-works",
+            "label": "Theological works"
+          }
+        ]
+      },
+      "iiif_behaviors": {
+        "type": "string",
+        "enum": [
+          "paged",
+          "individuals"
+        ]
+      },
+      "iiif_text_directions": {
+        "type": "string",
+        "enum": [
+          "right-to-left",
+          "top-to-bottom",
+          "bottom-to-top"
+        ]
+      },
+      "iiif_types": {
+        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/controlled_term",
+        "enum": [
+          {
+            "id": "main",
+            "label": "Main"
+          },
+          {
+            "id": "reordered",
+            "label": "Reordered"
+          }
+        ]
+      },
+      "ms_obj_real_types": {
+        "enum": [
+          {
+            "id": "manuscript",
+            "label": "Manuscript"
+          }
+        ]
+      },
+      "ms_obj_reconstructed_types": {
+        "enum": [
+          {
+            "id": "rebind",
+            "label": "Digital Rebinding"
+          },
+          {
+            "id": "uto",
+            "label": "Undertext Object"
+          }
+        ]
+      },
+      "paracontent_types": {
+        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/controlled_term",
+        "enum": [
+          {
+            "id": "history",
+            "label": "History"
+          },
+          {
+            "id": "guest",
+            "label": "Guest"
+          },
+          {
+            "id": "framing",
+            "label": "Framing"
+          },
+          {
+            "id": "misc",
+            "label": "Miscellaneous"
+          }
+        ]
+      },
+      "place_place_rels": {
+        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/controlled_term",
+        "enum": [
+          {
+            "id": "part-of",
+            "label": "Part Of"
+          }
+        ]
+      },
+      "place_types": {
+        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/controlled_term",
+        "enum": [
+            {
+                "id": "building",
+                "label": "Building"
+            },
+            {
+                "id": "church",
+                "label": "Church"
+            },
+            {
+                "id": "composite",
+                "label": "Composite"
+            },
+            {
+                "id": "designated-space",
+                "label": "Designated Space"
+            },
+            {
+                "id": "diocese",
+                "label": "Diocese"
+            },
+            {
+                "id": "fortification",
+                "label": "Fortification"
+            },
+            {
+                "id": "island",
+                "label": "Island"
+            },
+            {
+                "id": "madrasa",
+                "label": "Madrasa"
+            },
+            {
+                "id": "monastery",
+                "label": "Monastery"
+            },
+            {
+                "id": "mosque",
+                "label": "Mosque"
+            },
+            {
+                "id": "mountain",
+                "label": "Mountain"
+            },
+            {
+                "id": "natural feature",
+                "label": "Natural Feature"
+            },
+            {
+                "id": "open-water",
+                "label": "Open Water"
+            },
+            {
+                "id": "parish",
+                "label": "Parish"
+            },
+            {
+                "id": "province",
+                "label": "Province"
+            },
+            {
+                "id": "quarter",
+                "label": "Quarter"
+            },
+            {
+                "id": "region",
+                "label": "Region"
+            },
+            {
+                "id": "river",
+                "label": "River"
+            },
+            {
+                "id": "settlement",
+                "label": "Settlement"
+            },
+            {
+                "id": "state",
+                "label": "State"
+            },
+            {
+                "id": "synagogue",
+                "label": "Synagogue"
+            },
+            {
+                "id": "temple",
+                "label": "Temple"
+            },
+            {
+                "id": "unknown",
+                "label": "Unknown"
+            }
+        ]
+    },
+      "refno_source_types": {
+        "enum": [
+          "CPG",
+          "CPL",
+          "TLG"
+        ]
+      },
+      "rel_con_source_types": {
+        "enum": [
+          "HAF",
+          "LoC",
+          "Perseus",
+          "Pinakes",
+          "Pleiades",
+          "Syriaca",
+          "VIAF"
+        ]
+      },
+      "related_mss_types": {
+        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/controlled_term",
+        "enum": [
+          {
+            "id": "filiation",
+            "label": "Filiation"
+          },
+          {
+            "id": "disjecta",
+            "label": "Disjecta Membra"
+          },
+          {
+            "id": "reconstructed-from",
+            "label": "Reconstructed From"
+          }
+        ]
+      },
+      "states": {
+        "description": "The current state of the manuscript object",
+        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/controlled_term",
+        "enum": [
+          {
+            "id": "codex",
+            "label": "Codex"
+          },
+          {
+            "id": "quire",
+            "label": "Quire(s)"
+          },
+          {
+            "id": "bifolio",
+            "label": "Bifolio(s)"
+          },
+          {
+            "id": "folio",
+            "label": "Folio(s)"
+          },
+          {
+            "id": "folio-fragment",
+            "label": "Folio Fragment(s)"
+          },
+          {
+            "id": "uto",
+            "label": "Undertext Object"
+          },
+          {
+            "id": "scroll",
+            "label": "Scroll"
+          }
+        ]
+      },
+      "states_layer": {
+        "description": "The current state of the inscribed layer",
+        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/controlled_term",
+        "enum": [
+          {
+            "id": "overtext",
+            "label": "Overtext"
+          },
+          {
+            "id": "undertext",
+            "label": "Undertext"
+          },
+          {
+            "id": "guest",
+            "label": "Guest Content"
+          },
+          {
+            "id": "reconstruction",
+            "label": "Reconstruction"
+          }
+        ]
+      },
+      "supports": {
+        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/controlled_term",
+        "enum": [
+          {
+            "id": "paper",
+            "label": "Paper"
+          },
+          {
+            "id": "parchment",
+            "label": "Parchment"
+          },
+          {
+            "id": "papyrus",
+            "label": "Papyrus"
+          }
+        ]
+      },
+      "viscodex_types": {
+        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/controlled_term",
+        "enum": [
+          {
+            "id": "manuscript",
+            "label": "Manuscript"
+          },
+          {
+            "id": "reconstruction",
+            "label": "Reconstruction"
+          }
+        ]
+      },
+      "work_agent_rels": {
+        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/controlled_term",
+        "enum": [
+          {
+            "id": "commemorates",
+            "label": "Commemorates"
+          },
+          {
+            "id": "addressee",
+            "label": "Addressee"
+          }
+        ]
+      },
+      "work_place_rels": {
+        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/controlled_term",
+        "enum": [
+          {
+            "id": "composition",
+            "label": "Place of Composition"
+          }
+        ]
+      },
+      "work_work_rels": {
+        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/controlled_term",
+        "enum": [
+          {
+            "id": "has-part",
+            "label": "Has Part"
+          },
+          {
+            "id": "has-version",
+            "label": "Has Version"
+          },
+          {
+            "id": "part-of",
+            "label": "Part Of"
+          },
+          {
+            "id": "version-of",
+            "label": "Version Of"
+          }
+        ]
+      }
+    }
+  }

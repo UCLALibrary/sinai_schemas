@@ -1,0 +1,88 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/bib.json",
+    "title": "Bibliography",
+    "description": "A bibliographic citation connected with an object or entity",
+    "type": "object",
+    "properties": {
+        "id": {
+            "type": "string",
+            "format": "uuid"
+        },
+        "shortcode": {
+            "type": "string"
+
+        },
+        "citation": {
+            "type": "string"
+        },
+        "type": {
+            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/controlled_term"
+        },
+        "range": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "minLength": 1
+        },
+        "alt_shelf": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "minLength": 1
+        },
+        "url": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "minLength": 1
+        },
+        "note": {
+            "type": ["array", "null"],
+            "items": {
+                "type": "string"
+            },
+            "unevaluatedItems": false
+        }
+    },
+    "required": [
+        "id",
+        "shortcode",
+        "citation",
+        "type"
+    ],
+    "if": {
+        "properties": {
+            "type": {
+                "const": {
+                    "id": "otherdigversion",
+                    "label": "Other Digital Version"
+                }
+            }
+        },
+        "required": ["type"]
+    },
+    "then": {
+        "properties": {
+            "url": {
+                "type": "string",
+                "minLength": 1
+            },
+            "id": {
+                "type": "string",
+                "format": "uuid"
+            }
+        },
+        "required": [
+            "id",
+            "shortcode",
+            "citation",
+            "type",
+            "url"
+        ]
+    },
+    "unevaluatedProperties": false
+}

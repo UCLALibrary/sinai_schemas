@@ -1,0 +1,101 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/work_witness.json",
+    "title": "Work Witness",
+    "description": "A Work Witness is a piece of content that forms part of a content unit within a manuscript and attests a distinct conceptual work",
+    "type": "object",
+    "properties": {
+        "work": {
+            "oneOf": [
+                {
+                    "type": "object",
+                    "properties": {
+                        "id": {
+                            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/ark"
+                        }
+                    },
+                    "required": ["id"],
+                    "unevaluatedProperties": false
+                },
+                {
+                    "type": "object",
+                    "properties": {
+                        "desc_title": {
+                            "type": "string",
+                            "minLength": 1
+                        },
+                        "creator": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/ark"
+                            },
+                            "minItems": 1,
+                            "unevaluatedItems": false
+                        },
+                        "genre": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/enums.json#/$defs/genres"
+                            },
+                            "minItems": 1,
+                            "unevaluatedItems": false     
+                        }
+                    },
+                    "required": [
+                        "desc_title"
+                    ],
+                    "unevaluatedProperties": false
+                }
+            ]
+        },
+        "alt_title": {
+            "description": "An alternative title providing witness-specific information about the work",
+            "type": "string"
+        },
+        "as_written": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "minLength": 1
+        },
+        "locus": {
+            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/locus"
+        },
+        "excerpt": {
+            "type": ["array", "null"],
+            "items": {
+                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/excerpt.json"
+            },
+            "unevaluatedItems": false
+        },
+        "contents": {
+            "type": ["array", "null"],
+            "items": {
+                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/contents"
+            },
+            "unevaluatedItems": false
+        },
+        "note": {
+            "type": ["array", "null"],
+            "items": {
+                "type": "string"
+            },
+            "unevaluatedItems": false
+        },
+        "bib": {
+            "type": [
+                "array",
+                "null"
+            ],
+            "items": {
+                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/bib.json"
+            },
+            "unevaluatedItems": false
+        }
+    },
+    "required": [
+        "work"
+    ],
+    "unevaluatedProperties": false
+}

@@ -1,0 +1,411 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json",
+    "title": "Utilities",
+    "description": "A collection of simple sub-schemas used across object types",
+    "type": "null",
+    "$defs": {
+        "ark": {
+            "description": "A unique Archival Resource Key (ARK)",
+            "type": "string",
+            "pattern": "^ark:/21198/([a-z]|[0-9])+"
+        },
+        "change_log_entry": {
+            "type": "object",
+                "properties": {
+                    "message": {
+                        "type": "string",
+                        "minLength": 1
+                    },
+                    "contributor": {
+                        "description": "The person responsible for the intellectual contributions made to the record via this change",
+                        "type": "string",
+                        "minLength": 1,
+                        "$comment": "TBD: Possibly revise the format or restrict to a set of ID-like values rather than entering name forms"
+                    },
+                    "added_by": {
+                        "description": "The user account responsible for editing the JSON record, likely supplied by the content management system",
+                        "type": "string",
+                        "minLength": 1,
+                        "$comment": "TBD: Possibly revise the format or restrict to a set of ID-like values rather than entering name forms"
+                    },
+                    "timestamp": {
+                        "type": "string",
+                        "format": "date-time",
+                        "minLength": 1
+                    }
+                },
+                "required": [
+                    "message",
+                    "added_by",
+                    "timestamp"
+                ],
+                "unevaluatedProperties": false
+        },
+        "coll": {
+            "description": "A string expressing the collation of the object following a semi-controlled format, such as a collational formula",
+            "type": [
+                "string",
+                "null"
+            ],
+            "minLength": 1,
+            "$comment": "could require a pattern to conform these to a specific collational formula scheme"
+        },
+        "contents": {
+            "description": "A list of the contents, such as the chapter or book divisions, of a work witness",
+            "type": "object",
+            "properties": {
+                "label": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "work_id": {
+                    "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/ark"
+                },
+                "locus": {
+                    "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/locus"
+                },
+                "note": {
+                    "type": ["array", "null"],
+                    "items": {
+                        "type": "string"
+                    },
+                    "unevaluatedItems": false
+                }
+            },
+            "anyOf": [
+                {
+                    "properties": {
+                        "label": {
+                            "type": "string",
+                            "minLength": 1
+                        }
+                    },
+                    "required": ["label"]
+                },
+                {
+                    "properties": {
+                        "work_id": {
+                            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/ark"
+                        }
+                    },
+                    "required": ["work_id"]
+                }
+            ],
+            "unevaluatedProperties": false
+        },
+        "controlled_term": {
+            "description": "A reference to a controlled term that is stored in a database table, referenced via ID but including a human-readable label",
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "label": {
+                    "type": "string",
+                    "minLength": 1
+                }
+            },
+            "required": [
+                "id",
+                "label"
+            ],
+            "unevaluatedProperties": false
+        },
+        "date_core": {
+            "type": "object",
+            "properties": {
+                "value": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "iso": {
+                    "type": "object",
+                    "properties": {
+                        "not_before": {
+                            "type": "string",
+                            "minLength": 4
+                        },
+                        "not_after": {
+                            "type": ["string", "null"],
+                            "minLength": 4
+                        }
+                        },
+                    "required": [
+                        "not_before"
+                    ],
+                    "unevaluatedProperties": false
+                }
+            },
+            "required": [
+                "value"
+            ]
+        },
+        "desc_provenance": {
+            "type": "object",
+            "properties": {
+                "program": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "label": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "label",
+                            "description"
+                        ],
+                        "unevaluatedProperties": false
+                    },
+                    "unevaluatedItems": false
+                },
+                "rights": {
+                    "type": "string"
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "dim": {
+            "description": "A string expression of an object's dimensions, whether manuscript block, folio, or writing area",
+            "type": ["string", "null"],
+            "minLength": 1
+        },
+        "extent": {
+            "description": "The extent, expressed in number of folios, which comprise the manuscript object",
+            "type": ["string", "null"],
+            "minLength": 1
+        },
+        "fol": {
+            "description": "A string expressing the foliation of the object in a semi-controlled format",
+            "type": [
+                "string",
+                "null"
+            ],
+            "minLength": 1,
+            "$comment": "could require a pattern to capture the style of input we require. e.g. 'ff. 1-24 + flyleaves I-III'"
+        },
+        "id": {
+            "description": "A unique identifer, supplied by the database",
+            "type": "integer"
+        },
+        "image_provenance": {
+            "type": "object",
+            "properties": {
+                "program": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "label": {
+                                "type": "string"
+                            },
+                            "description": {
+                                "type": "string"
+                            },
+                            "camera_operator": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                },
+                                "unevaluatedItems": false
+                            },
+                            "imaging_date": {
+                                "type": "string",
+                                "$comment": "Because we may have only months, will not enforce `format` of `date`"
+                            },
+                            "delivery": {
+                                "type": "string"
+                            },
+                            "msi_processing": {
+                                "description": "Names of the person(s) responsible for processing the MSI data for this record",
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                },
+                                "unevaluatedItems": false
+                            },
+                            "condition_category": {
+                                "type": "string"
+                            },
+                            "imaging_system": {
+                                "type": "string"
+                            },
+                            "note": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string"
+                                },
+                                "unevaluatedItems": false
+                            }
+                        },
+                        "unevaluatedProperties": false
+                    },
+                    "unevaluatedItems": false
+                },
+                "rights": {
+                    "type": "string",
+                    "minLength": 1
+                }
+            },
+            "unevaluatedProperties": false
+        },
+        "locus": {
+            "type": "string",
+            "minLength": 1,
+            "$comment": "Can use format to restrain to regex for, e.g., 'ff. x-y'"
+        },
+        "ms_location": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "collection": {
+                    "type": "string"
+                },
+                "repository": {
+                    "type": "string",
+                    "minLength": 1
+                }
+            },
+            "required": [
+                "id",
+                "repository"
+            ],
+            "unevaluatedProperties": false
+        },
+        "refno": {
+            "description": "A reference number in a standard reference work, such as the Corpus Clavium Graecorum (CPG)",
+            "type": "object",
+            "properties": {
+                "label": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "idno": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "source": {
+                    "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/enums.json#/$defs/refno_source_types"
+                }
+            },
+            "required": [
+                "label",
+                "idno",
+                "source"
+            ],
+            "unevaluatedProperties": false
+        },
+        "rel_con": {
+            "description": "A related concept to a given entity provided by another authority file. May be connected via a skos:closeMatch property",
+            "type": "object",
+            "properties": {
+                "label": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "uri": {
+                    "type": "string",
+                    "format": "uri",
+                    "minLength": 1
+                },
+                "source": {
+                    "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/enums.json#/$defs/rel_con_source_types"
+                }
+            },
+            "required": [
+                "label",
+                "uri",
+                "source"
+            ],
+            "unevaluatedProperties": false
+        },
+        "rel_entity_core": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/ark"
+                },
+                "source": {
+                    "type": ["array", "null"],
+                    "items": {
+                        "type": "string"
+                    },
+                    "unevaluatedItems": false
+                }
+            },
+            "required": [
+                "id"
+            ]
+        },
+        "script": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "label": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "writing_system": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "id",
+                "label",
+                "writing_system"
+            ],
+            "unevaluatedProperties": false
+        },
+        "summary": {
+            "type": [
+                "string",
+                "null"
+            ],
+            "minLength": 1
+        },
+        "weight": {
+            "description": "A string expression of the manuscript object's weight",
+            "type": "string",
+            "minLength": 1
+        },
+        "work_excerpt": {
+            "type": "object",
+            "properties": {
+                "value": {
+                    "type": "string",
+                    "minLength": 1
+                },
+                "translation": {
+                    "type": ["array", "null"],
+                    "items": {
+                        "type": "string"
+                    },
+                    "unevaluatedItems": false
+                },
+                "source": {
+                    "type": ["array", "null"],
+                    "items": {
+                        "type": "string"
+                    },
+                    "unevaluatedItems": false
+                }
+            },
+            "required": [
+                "value"
+            ],
+            "unevaluatedProperties": false
+        }
+    }
+}
