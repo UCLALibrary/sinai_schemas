@@ -13,8 +13,7 @@
         },
         "manifest": {
             "type": "string",
-            "format": "uri",
-            "minLength": 1
+            "format": "uri"
         },
         "text_direction": {
             "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/enums.json#/$defs/iiif_text_directions"
@@ -23,11 +22,7 @@
             "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/enums.json#/$defs/iiif_behaviors"
         },
         "thumbnail": {
-            "type": [
-                "string",
-                "null"
-            ],
-            "minLength": 1,
+            "type": "string",
             "format": "uri"
         }
     },

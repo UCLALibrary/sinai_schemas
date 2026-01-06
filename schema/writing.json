@@ -15,10 +15,10 @@
             "unevaluatedItems": false
         },
         "locus": {
-            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/locus"
+            "type": "string"
         },
         "note": {
-            "type": ["array", "null"],
+            "type": "array",
             "items": {
                 "type": "string"
             },

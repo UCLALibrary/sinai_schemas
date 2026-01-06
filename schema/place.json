@@ -12,19 +12,17 @@
             "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/enums.json#/$defs/place_types"
         },
         "pref_name": {
-            "type": "string",
-            "minLength": 1
+            "type": "string"
         },
         "alt_name": {
-            "type": ["array", "null"],
+            "type": "array",
             "items": {
-                "type": "string",
-                "minLength": 1
+                "type": "string"
             },
             "unevaluatedItems": false        
         },
         "desc": {
-            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/summary"
+            "type": "string"
         },
         "geojson": {
             "type": "array",
@@ -34,38 +32,35 @@
             "unevaluatedItems": false
         },
         "rel_con": {
-            "type": ["array", "null"],
+            "type": "array",
             "items": {
                 "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/rel_con"
             },
             "unevaluatedItems": false
         },
         "refno": {
-            "type": ["array", "null"],
+            "type": "array",
             "items": {
                 "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/refno"
             },
             "unevaluatedItems": false
         },
         "bib": {
-            "type": [
-                "array",
-                "null"
-            ],
+            "type": "array",
             "items": {
                 "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/bib.json"
             },
             "unevaluatedItems": false
         },
         "note": {
-            "type": ["array", "null"],
+            "type": "array",
             "items": {
                 "type": "string"
             },
             "unevaluatedItems": false
         },
         "rel_place": {
-            "type": ["array", "null"],
+            "type": "array",
             "items": {
                 "type": "object",
                 "allOf": [
@@ -90,10 +85,7 @@
             "unevaluatedItems": false
         },
         "cataloguer": {
-            "type": [
-                "array",
-                "null"
-            ],
+            "type": "array",
             "items": {
                 "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/change_log_entry"
             },

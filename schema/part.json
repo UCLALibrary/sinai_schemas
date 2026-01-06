@@ -6,14 +6,13 @@
     "type": "object",
     "properties": {
         "label": {
-            "type": "string",
-            "minLength": 1
+            "type": "string"
         },
         "summary": {
-            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/summary"
+            "type": "string"
         },
         "locus": {
-            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/locus"
+            "type": "string"
         },
         "support": {
             "type": "array",
@@ -30,7 +29,7 @@
             "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/dim"
         },
         "layer": {
-            "type": ["array"],
+            "type": "array",
             "items": {
                 "type": "object",
                 "properties": {
@@ -38,8 +37,7 @@
                         "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/ark"
                     },
                     "label": {
-                        "type": "string",
-                        "minLength": 1
+                        "type": "string"
                     },
                     "type": {
                         "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/controlled_term",
@@ -59,7 +57,7 @@
                         ]
                     },
                     "locus": {
-                        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/locus"
+                        "type": "string"
                     }
                 },
                 "required": [
@@ -73,24 +71,21 @@
             "unevaluatedItems": false
         },
         "para": {
-            "type": ["array", "null"],
+            "type": "array",
             "items": {
                 "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/paracontent.json"
             },
             "unevaluatedItems": false
         },
         "note": {
-            "type": ["array", "null"],
+            "type": "array",
             "items": {
                 "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/note.json"
             },
             "unevaluatedItems": false
         },
         "related_mss": {
-            "type": [
-                "array",
-                "null"
-            ],
+            "type": "array",
             "items": {
                 "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/related_mss.json"
             },

@@ -9,11 +9,10 @@
             "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/enums.json#/$defs/related_mss_types"
         },
         "label": {
-            "type": "string",
-            "minLength": 1
+            "type": "string"
         },
         "note": {
-            "type": ["array", "null"],
+            "type": "array",
             "items": {
                 "type": "string"
             },
@@ -25,22 +24,16 @@
                 "type": "object",
                 "properties": {
                     "label": {
-                        "type": "string",
-                        "minLength": 1
+                        "type": "string"
                     },
                     "id": {
                         "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/ark"
                     },
                     "url": {
-                        "type": [
-                            "string",
-                            "null"
-                        ],
-                        "format": "uri",
-                        "minLength": 1
+                        "type": "string",
+                        "format": "uri"
                     }
                 },
-                "$comment": "Possible x-or logic for id and url",
                 "required": [
                     "label"
                 ],

@@ -2,7 +2,7 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/paracontent.json",
     "title": "Paracontent",
-    "description": "An item of paracontent related to a manuscript object, codicological unit, or textual artifact",
+    "description": "An item of paracontent related to a manuscript object, inscribed layer, or text unit; or a piece of guest content incidentally connected to an object",
     "type": "object",
     "properties": {
         "type": {
@@ -16,7 +16,7 @@
             "unevaluatedItems": false
         },
         "locus": {
-            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/locus"
+            "type": "string"
         },
         "lang": {
             "type": "array",
@@ -35,43 +35,41 @@
             "unevaluatedItems": false
         },
         "label": {
-            "type": ["string", "null"],
-            "minLength": 1
+            "type": "string"
         },
         "as_written": {
-            "type": ["string", "null"],
-            "minLength": 1
+            "type": "string"
         },
         "translation": {
-            "type": ["array", "null"],
+            "type": "array",
             "items": {
                 "type": "string"
             },
             "unevaluatedItems": false
         },
         "assoc_name": {
-            "type": ["array", "null"],
+            "type": "array",
             "items": {
                 "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/assoc_name.json"
             },
             "unevaluatedItems": false
         },
         "assoc_place": {
-            "type": ["array", "null"],
+            "type": "array",
             "items": {
                 "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/assoc_place.json"
             },
             "unevaluatedItems": false
         },
         "assoc_date": {
-            "type": ["array", "null"],
+            "type": "array",
             "items": {
                 "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/assoc_date.json"
             },
             "unevaluatedItems": false
         },
         "note": {
-            "type": ["array", "null"],
+            "type": "array",
             "items": {
                 "type": "string"
             },
@@ -83,5 +81,5 @@
         "locus",
         "lang"
     ],
-        "unevaluatedProperties": false
+    "unevaluatedProperties": false
 }

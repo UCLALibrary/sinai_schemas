@@ -2,6 +2,7 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/layer.json",
     "title": "Inscribed Layer",
+    "description": "A single material layer of writing, illustration, decoration, or other markings that conveys the intellectual and creative content of a scribal production unit",
     "type": "object",
     "properties": {
         "ark": {
@@ -14,14 +15,13 @@
             "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/enums.json#/$defs/states_layer"
         },
         "label": {
-            "type": "string",
-            "minLength": 1
+            "type": "string"
         },
         "locus": {
-            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/locus"
+            "type": "string"
         },
         "summary": {
-            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/summary"
+            "type": "string"
         },
         "extent": {
             "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/extent"
@@ -42,7 +42,7 @@
             "unevaluatedItems": false
         },
         "layout": {
-            "type": ["array", "null"],
+            "type": "array",
             "items": {
                 "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/layout.json"
             },
@@ -57,11 +57,10 @@
                         "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/ark"
                     },
                     "label": {
-                        "type": "string",
-                        "minLength": 1
+                        "type": "string"
                     },
                     "locus": {
-                        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/locus"
+                        "type": "string"
                     }
                 },
                 "required": [
@@ -74,62 +73,56 @@
             "unevaluatedItems": false
         },
         "para": {
-            "type": ["array", "null"],
+            "type": "array",
             "items": {
                 "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/paracontent.json"
             },
             "unevaluatedItems": false
         },
         "assoc_date": {
-            "type": ["array", "null"],
+            "type": "array",
             "items": {
                 "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/assoc_date.json"
             },
             "unevaluatedItems": false
         },
         "assoc_name": {
-            "type": ["array", "null"],
+            "type": "array",
             "items": {
                 "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/assoc_name.json"
             },
             "unevaluatedItems": false
         },
         "assoc_place": {
-            "type": ["array", "null"],
+            "type": "array",
             "items": {
                 "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/assoc_place.json"
             },
             "unevaluatedItems": false
         },
         "features": {
-            "type": ["array", "null"],
+            "type": "array",
             "items": {
                 "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/controlled_term"
             },
             "unevaluatedItems": false
         },
         "related_mss": {
-            "type": [
-                "array",
-                "null"
-            ],
+            "type": "array",
             "items": {
                 "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/related_mss.json"
             },
             "unevaluatedItems": false
         },
         "note": {
-            "type": ["array", "null"],
+            "type": "array",
             "items": {
                 "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/note.json"
             },
             "unevaluatedItems": false
         },
         "bib": {
-            "type": [
-                "array",
-                "null"
-            ],
+            "type": "array",
             "items": {
                 "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/bib.json"
             },
@@ -139,10 +132,7 @@
             "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/desc_provenance"
         },
         "cataloguer": {
-            "type": [
-                "array",
-                "null"
-            ],
+            "type": "array",
             "items": {
                 "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/change_log_entry"
             },
@@ -161,13 +151,6 @@
                 "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/ark"
             },
             "minItems": 1,
-            "unevaluatedItems": false
-        },
-        "internal": {
-            "type": "array",
-            "items": {
-                "type": "string"
-            },
             "unevaluatedItems": false
         }
     },

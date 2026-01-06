@@ -14,8 +14,7 @@
             "type": "object",
                 "properties": {
                     "message": {
-                        "type": "string",
-                        "minLength": 1
+                        "type": "string"
                     },
                     "contributor": {
                         "description": "The person responsible for the intellectual contributions made to the record via this change",
@@ -27,14 +26,11 @@
                     },
                     "added_by": {
                         "description": "The user account responsible for editing the JSON record, likely supplied by the content management system",
-                        "type": "string",
-                        "minLength": 1,
-                        "$comment": "TBD: Possibly revise the format or restrict to a set of ID-like values rather than entering name forms"
+                        "type": "string"
                     },
                     "timestamp": {
                         "type": "string",
-                        "format": "date-time",
-                        "minLength": 1
+                        "format": "date-time"
                     }
                 },
                 "required": [
@@ -44,31 +40,21 @@
                 ],
                 "unevaluatedProperties": false
         },
-        "coll": {
-            "description": "A string expressing the collation of the object following a semi-controlled format, such as a collational formula",
-            "type": [
-                "string",
-                "null"
-            ],
-            "minLength": 1,
-            "$comment": "could require a pattern to conform these to a specific collational formula scheme"
-        },
         "contents": {
             "description": "A list of the contents, such as the chapter or book divisions, of a work witness",
             "type": "object",
             "properties": {
                 "label": {
-                    "type": "string",
-                    "minLength": 1
+                    "type": "string"
                 },
                 "work_id": {
                     "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/ark"
                 },
                 "locus": {
-                    "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/locus"
+                    "type": "string"
                 },
                 "note": {
-                    "type": ["array", "null"],
+                    "type": "array",
                     "items": {
                         "type": "string"
                     },
@@ -79,8 +65,7 @@
                 {
                     "properties": {
                         "label": {
-                            "type": "string",
-                            "minLength": 1
+                            "type": "string"
                         }
                     },
                     "required": ["label"]
@@ -101,12 +86,10 @@
             "type": "object",
             "properties": {
                 "id": {
-                    "type": "string",
-                    "minLength": 1
+                    "type": "string"
                 },
                 "label": {
-                    "type": "string",
-                    "minLength": 1
+                    "type": "string"
                 }
             },
             "required": [
@@ -119,8 +102,7 @@
             "type": "object",
             "properties": {
                 "value": {
-                    "type": "string",
-                    "minLength": 1
+                    "type": "string"
                 },
                 "iso": {
                     "type": "object",
@@ -130,7 +112,7 @@
                             "minLength": 4
                         },
                         "not_after": {
-                            "type": ["string", "null"],
+                            "type": "string",
                             "minLength": 4
                         }
                         },
@@ -175,26 +157,11 @@
         },
         "dim": {
             "description": "A string expression of an object's dimensions, whether manuscript block, folio, or writing area",
-            "type": ["string", "null"],
-            "minLength": 1
+            "type": "string"
         },
         "extent": {
             "description": "The extent, expressed in number of folios, which comprise the manuscript object",
-            "type": ["string", "null"],
-            "minLength": 1
-        },
-        "fol": {
-            "description": "A string expressing the foliation of the object in a semi-controlled format",
-            "type": [
-                "string",
-                "null"
-            ],
-            "minLength": 1,
-            "$comment": "could require a pattern to capture the style of input we require. e.g. 'ff. 1-24 + flyleaves I-III'"
-        },
-        "id": {
-            "description": "A unique identifer, supplied by the database",
-            "type": "integer"
+            "type": "string"
         },
         "image_provenance": {
             "type": "object",
@@ -251,30 +218,22 @@
                     "unevaluatedItems": false
                 },
                 "rights": {
-                    "type": "string",
-                    "minLength": 1
+                    "type": "string"
                 }
             },
             "unevaluatedProperties": false
-        },
-        "locus": {
-            "type": "string",
-            "minLength": 1,
-            "$comment": "Can use format to restrain to regex for, e.g., 'ff. x-y'"
         },
         "ms_location": {
             "type": "object",
             "properties": {
                 "id": {
-                    "type": "string",
-                    "minLength": 1
+                    "type": "string"
                 },
                 "collection": {
                     "type": "string"
                 },
                 "repository": {
-                    "type": "string",
-                    "minLength": 1
+                    "type": "string"
                 }
             },
             "required": [
@@ -288,12 +247,10 @@
             "type": "object",
             "properties": {
                 "label": {
-                    "type": "string",
-                    "minLength": 1
+                    "type": "string"
                 },
                 "idno": {
-                    "type": "string",
-                    "minLength": 1
+                    "type": "string"
                 },
                 "source": {
                     "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/enums.json#/$defs/refno_source_types"
@@ -307,17 +264,15 @@
             "unevaluatedProperties": false
         },
         "rel_con": {
-            "description": "A related concept to a given entity provided by another authority file. May be connected via a skos:closeMatch property",
+            "description": "A related concept to a given entity provided by another authority file. May be understood via a skos:closeMatch property",
             "type": "object",
             "properties": {
                 "label": {
-                    "type": "string",
-                    "minLength": 1
+                    "type": "string"
                 },
                 "uri": {
                     "type": "string",
-                    "format": "uri",
-                    "minLength": 1
+                    "format": "uri"
                 },
                 "source": {
                     "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/enums.json#/$defs/rel_con_source_types"
@@ -337,7 +292,7 @@
                     "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/ark"
                 },
                 "source": {
-                    "type": ["array", "null"],
+                    "type": "array",
                     "items": {
                         "type": "string"
                     },
@@ -352,12 +307,10 @@
             "type": "object",
             "properties": {
                 "id": {
-                    "type": "string",
-                    "minLength": 1
+                    "type": "string"
                 },
                 "label": {
-                    "type": "string",
-                    "minLength": 1
+                    "type": "string"
                 },
                 "writing_system": {
                     "type": "string"
@@ -370,34 +323,21 @@
             ],
             "unevaluatedProperties": false
         },
-        "summary": {
-            "type": [
-                "string",
-                "null"
-            ],
-            "minLength": 1
-        },
-        "weight": {
-            "description": "A string expression of the manuscript object's weight",
-            "type": "string",
-            "minLength": 1
-        },
         "work_excerpt": {
             "type": "object",
             "properties": {
                 "value": {
-                    "type": "string",
-                    "minLength": 1
+                    "type": "string"
                 },
                 "translation": {
-                    "type": ["array", "null"],
+                    "type": "array",
                     "items": {
                         "type": "string"
                     },
                     "unevaluatedItems": false
                 },
                 "source": {
-                    "type": ["array", "null"],
+                    "type": "array",
                     "items": {
                         "type": "string"
                     },

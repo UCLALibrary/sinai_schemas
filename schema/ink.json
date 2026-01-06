@@ -7,18 +7,17 @@
     "properties": 
     {
         "locus": {
-            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/locus"
+            "type": "string"
         },
         "color": {
             "type": "array",
             "items": {
                 "type": "string"
             },
-            "unevaluatedItems": false,
-            "$comment": "Perhaps make this an enum to constrain color values?"
+            "unevaluatedItems": false
         },
         "note": {
-            "type": ["array", "null"],
+            "type": "array",
             "items": {
                 "type": "string"
             },

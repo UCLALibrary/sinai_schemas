@@ -10,11 +10,7 @@
             "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/controlled_term"
         },
         "value": {
-            "type": [
-                "string",
-                "null"
-            ],
-            "minLength": 1
+            "type": "string"
         }
     },
     "required": [

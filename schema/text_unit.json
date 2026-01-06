@@ -2,7 +2,7 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/text_unit.json",
     "title": "Text Unit",
-    "description": "A Text Unit defines a piece or pieces of content presented in a given manuscript in a unified form; may contain one or more work witnesses (REVISE)",
+    "description": "A textual artifact, comprising one or more work witnesses, that is intended to be encountered as a singular composition.",
     "type": "object",
     "properties": {
         "ark": {
@@ -12,14 +12,13 @@
             "type": "boolean"
         },
         "label": {
-            "type": "string",
-            "minLength": 1
+            "type": "string"
         },
         "summary": {
-            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/summary"
+            "type": "string"
         },
         "locus": {
-            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/locus"
+            "type": "string"
         },
         "lang": {
             "type": "array",
@@ -38,31 +37,28 @@
             "unevaluatedItems": false
         },
         "para": {
-            "type": ["array", "null"],
+            "type": "array",
             "items": {
                 "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/paracontent.json"
             },
             "unevaluatedItems": false
         },
         "features": {
-            "type": ["array", "null"],
+            "type": "array",
             "items": {
                 "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/controlled_term"
             },
             "unevaluatedItems": false
         },
         "note": {
-            "type": ["array", "null"],
+            "type": "array",
             "items": {
                 "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/note.json"
             },
             "unevaluatedItems": false
         },
         "bib": {
-            "type": [
-                "array",
-                "null"
-            ],
+            "type": "array",
             "items": {
                 "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/bib.json"
             },
@@ -72,10 +68,7 @@
             "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/desc_provenance"
         },
         "cataloguer": {
-            "type": [
-                "array",
-                "null"
-            ],
+            "type": "array",
             "items": {
                 "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/change_log_entry"
             },
@@ -94,13 +87,6 @@
                 "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/ark"
             },
             "minItems": 1,
-            "unevaluatedItems": false
-        },
-        "internal": {
-            "type": "array",
-            "items": {
-                "type": "string"
-            },
             "unevaluatedItems": false
         }
     },

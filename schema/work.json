@@ -2,47 +2,40 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/work.json",
     "title": "Conceptual Work",
-    "description": "A record for a conceptual work, which may be carried or embodied by a textual artifact or work witness",
+    "description": "A record for a conceptual work, which may be carried or embodied by a work witness",
     "type": "object",
     "properties": {
         "ark": {
             "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/ark"
         },
         "pref_title": {
-            "type": "string",
-            "minLength": 1,
-            "$comment": "Possibly rename as pref_name; add to util.json"
+            "type": "string"
         },
         "orig_lang": {
             "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/controlled_term"
         },
         "orig_lang_title": {
-            "type": [
-                "string",
-                "null"
-            ],
-            "minLength": 1
+            "type": "string"
         },
         "alt_title": {
-            "type": ["array", "null"],
+            "type": "array",
             "items": {
-                "type": "string",
-                "minLength": 1
+                "type": "string"
             },
             "unevaluatedItems": false        
         },
         "desc": {
-            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/summary"
+            "type": "string"
         },
         "genre": {
-            "type": ["array", "null"],
+            "type": "array",
             "items": {
                 "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/enums.json#/$defs/genres"
             },
             "unevaluatedItems": false     
         },
         "creator": {
-            "type": ["array", "null"],
+            "type": "array",
             "items": {
                 "type": "object",
                 "properties": {
@@ -72,38 +65,35 @@
             "unevaluatedProperties": false
         },
         "rel_con": {
-            "type": ["array", "null"],
+            "type": "array",
             "items": {
                 "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/rel_con"
             },
             "unevaluatedItems": false
         },
         "refno": {
-            "type": ["array", "null"],
+            "type": "array",
             "items": {
                 "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/refno"
             },
             "unevaluatedItems": false
         },
         "bib": {
-            "type": [
-                "array",
-                "null"
-            ],
+            "type": "array",
             "items": {
                 "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/bib.json"
             },
             "unevaluatedItems": false
         },
         "note": {
-            "type": ["array", "null"],
+            "type": "array",
             "items": {
                 "type": "string"
             },
             "unevaluatedItems": false
         },
         "rel_work": {
-            "type": ["array", "null"],
+            "type": "array",
             "items": {
                 "type": "object",
                 "allOf": [
@@ -128,7 +118,7 @@
             "unevaluatedItems": false
         },
         "rel_agent": {
-            "type": ["array", "null"],
+            "type": "array",
             "items": {
                 "type": "object",
                 "allOf": [
@@ -153,7 +143,7 @@
             "unevaluatedItems": false
         },
         "rel_place": {
-            "type": ["array", "null"],
+            "type": "array",
             "items": {
                 "type": "object",
                 "allOf": [
@@ -177,21 +167,8 @@
             },
             "unevaluatedItems": false
         },
-        "internal": {
-            "type": [
-                "array",
-                "null"
-            ],
-            "items": {
-                "type": "string"
-            },
-            "unevaluatedItems": false
-        },
         "cataloguer": {
-            "type": [
-                "array",
-                "null"
-            ],
+            "type": "array",
             "items": {
                 "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/change_log_entry"
             },

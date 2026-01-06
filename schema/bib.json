@@ -11,7 +11,6 @@
         },
         "shortcode": {
             "type": "string"
-
         },
         "citation": {
             "type": "string"
@@ -20,28 +19,16 @@
             "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/controlled_term"
         },
         "range": {
-            "type": [
-                "string",
-                "null"
-            ],
-            "minLength": 1
+            "type": "string"
         },
         "alt_shelf": {
-            "type": [
-                "string",
-                "null"
-            ],
-            "minLength": 1
+            "type": "string"
         },
         "url": {
-            "type": [
-                "string",
-                "null"
-            ],
-            "minLength": 1
+            "type": "string"
         },
         "note": {
-            "type": ["array", "null"],
+            "type": "array",
             "items": {
                 "type": "string"
             },
@@ -68,8 +55,7 @@
     "then": {
         "properties": {
             "url": {
-                "type": "string",
-                "minLength": 1
+                "type": "string"
             },
             "id": {
                 "type": "string",

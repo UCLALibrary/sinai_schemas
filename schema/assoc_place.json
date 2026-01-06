@@ -2,31 +2,23 @@
     "$schema": "https://json-schema.org/draft/2020-12/schema",
     "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/assoc_place.json",
     "title": "Associated Place",
-    "description": "A place entity connected with an object via a given role",
+    "description": "A place entity connected with an object via an event in the object's life cycle",
     "type": "object",
     "properties": {
         "id": {
             "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/ark"
         },
         "value": {
-            "type": [
-                "string",
-                "null"
-            ],
-            "minLength": 1
+            "type": "string"
         },
         "as_written": {
-            "type": [
-                "string",
-                "null"
-            ],
-            "minLength": 1
+            "type": "string"
         },
         "event": {
             "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/controlled_term"
         },
         "note": {
-            "type": ["array", "null"],
+            "type": "array",
             "items": {
                 "type": "string"
             },
