@@ -22,7 +22,7 @@
             "unevaluatedItems": false        
         },
         "desc": {
-            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/summary"
+            "type": "string"
         },
         "gender": {
             "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/enums.json#/$defs/genders"
