@@ -28,7 +28,7 @@ function writeFile(filePath, contents, cb) {
 }
 
 try {
-  for (let schema in schemaFileNames) {
+  for (let schema of schemaFileNames) {
     //dereference each schema specified in the schemaFileNames dictionary
     let schemaPath = schemaLocationsLocal + schemaFileNames[schema];
     let bundled_schema = await $RefParser.dereference(schemaPath);
