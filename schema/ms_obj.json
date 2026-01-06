@@ -1,55 +1,55 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/ms_obj.json",
+    "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/ms_obj.json",
     "title": "Manuscript Object",
     "description": "A manuscript or codex, either real or a hypothetical reconstruction",
     "type": "object",
     "properties": {
         "ark": {
-            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/ark"
+            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/ark"
         },
         "reconstruction": {
             "type": "boolean"
         },
         "type": {
-            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/controlled_term"
+            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/controlled_term"
         },
         "shelfmark": {
             "type": "string",
             "minLength": 1
         },
         "summary": {
-            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/summary"
+            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/summary"
         },
         "extent": {
-            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/extent"
+            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/extent"
         },
         "weight": {
-            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/weight"
+            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/weight"
         },
         "dim": {
-            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/dim"
+            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/dim"
         },
         "state": {
-            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/enums.json#/$defs/states"
+            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/enums.json#/$defs/states"
         },
         "fol": {
-            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/fol"
+            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/fol"
         },
         "coll": {
-            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/coll"
+            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/coll"
         },
         "features": {
             "type": ["array", "null"],
             "items": {
-                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/controlled_term"
+                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/controlled_term"
             },
             "unevaluatedItems": false
         },
         "part": {
             "type": "array",
             "items": {
-                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/part.json"
+                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/part.json"
             },
             "minItems": 1,
             "unevaluatedItems": false
@@ -60,14 +60,14 @@
                 "type": "object",
                 "properties": {
                     "id": {
-                        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/ark"
+                        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/ark"
                     },
                     "label": {
                         "type": "string",
                         "minLength": 1
                     },
                     "type": {
-                        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/controlled_term",
+                        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/controlled_term",
                         "enums": [
                             {
                                 "id": "undertext",
@@ -80,7 +80,7 @@
                         ]
                     },
                     "locus": {
-                        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/locus"
+                        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/locus"
                     }
                 },
                 "required": [
@@ -96,42 +96,42 @@
         "para": {
             "type": ["array", "null"],
             "items": {
-                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/paracontent.json"
+                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/paracontent.json"
             },
             "unevaluatedItems": false
         },
         "location": {
             "type": "array",
             "items": {
-                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/ms_location"
+                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/ms_location"
             },
             "unevaluatedItems": false
         },
         "assoc_date": {
             "type": ["array", "null"],
             "items": {
-                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/assoc_date.json"
+                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/assoc_date.json"
             },
             "unevaluatedItems": false
         },
         "assoc_name": {
             "type": ["array", "null"],
             "items": {
-                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/assoc_name.json"
+                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/assoc_name.json"
             },
             "unevaluatedItems": false
         },
         "assoc_place": {
             "type": ["array", "null"],
             "items": {
-                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/assoc_place.json"
+                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/assoc_place.json"
             },
             "unevaluatedItems": false
         },
         "note": {
             "type": ["array", "null"],
             "items": {
-                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/note.json"
+                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/note.json"
             },
             "unevaluatedItems": false
         },
@@ -141,7 +141,7 @@
                 "null"
             ],
             "items": {
-                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/related_mss.json"
+                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/related_mss.json"
             },
             "unevaluatedItems": false
         },
@@ -151,7 +151,7 @@
                 "null"
             ],
             "items": {
-                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/viscodex.json"
+                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/viscodex.json"
             },
             "unevaluatedItems": false
         },
@@ -161,14 +161,14 @@
                 "null"
             ],
             "items": {
-                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/bib.json"
+                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/bib.json"
             },
             "unevaluatedItems": false
         },
         "iiif": {
             "type": "array",
             "items": {
-                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/iiif.json"
+                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/iiif.json"
             },
             "unevaluatedItems": false
         },
@@ -180,10 +180,10 @@
             "unevaluatedItems": false
         },
         "desc_provenance": {
-            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/desc_provenance"
+            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/desc_provenance"
         },
         "image_provenance": {
-            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/image_provenance"
+            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/image_provenance"
         },
         "cataloguer": {
             "type": [
@@ -191,14 +191,14 @@
                 "null"
             ],
             "items": {
-                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/change_log_entry"
+                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/change_log_entry"
             },
             "unevaluatedItems": false
         },
         "reconstructed_from": {
             "type": "array",
             "items": {
-                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/ark"
+                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/ark"
             },
             "unevaluatedItems": false
         }
@@ -223,12 +223,12 @@
     "then": {
         "properties": {
             "type": {
-                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/enums.json#/$defs/ms_obj_reconstructed_types"
+                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/enums.json#/$defs/ms_obj_reconstructed_types"
             },
             "reconstructed_from": {
                 "type": "array",
                 "items": {
-                    "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/ark"
+                    "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/ark"
                 },
                 "unevaluatedItems": false
             }
@@ -238,7 +238,7 @@
     "else": {
         "properties": {
             "type": {
-                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/enums.json#/$defs/ms_obj_real_types"
+                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/enums.json#/$defs/ms_obj_real_types"
             }
         }
     }

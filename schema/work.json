@@ -1,12 +1,12 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/work.json",
+    "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/work.json",
     "title": "Conceptual Work",
     "description": "A record for a conceptual work, which may be carried or embodied by a textual artifact or work witness",
     "type": "object",
     "properties": {
         "ark": {
-            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/ark"
+            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/ark"
         },
         "pref_title": {
             "type": "string",
@@ -14,7 +14,7 @@
             "$comment": "Possibly rename as pref_name; add to util.json"
         },
         "orig_lang": {
-            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/controlled_term"
+            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/controlled_term"
         },
         "orig_lang_title": {
             "type": [
@@ -32,12 +32,12 @@
             "unevaluatedItems": false        
         },
         "desc": {
-            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/summary"
+            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/summary"
         },
         "genre": {
             "type": ["array", "null"],
             "items": {
-                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/enums.json#/$defs/genres"
+                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/enums.json#/$defs/genres"
             },
             "unevaluatedItems": false     
         },
@@ -47,41 +47,41 @@
                 "type": "object",
                 "properties": {
                     "id": {
-                        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/ark"
+                        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/ark"
                     },
                     "role": {
-                        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/enums.json#/$defs/creator_roles"
+                        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/enums.json#/$defs/creator_roles"
                     }
                 }
             }
         },
         "creation": {
             "type": "object",
-            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/date_core",
+            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/date_core",
             "required": ["iso"],
             "unevaluatedProperties": false
         },
         "incipit": {
             "type": "object",
-            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/work_excerpt",
+            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/work_excerpt",
             "unevaluatedProperties": false
         },
         "explicit": {
             "type": "object",
-            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/work_excerpt",
+            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/work_excerpt",
             "unevaluatedProperties": false
         },
         "rel_con": {
             "type": ["array", "null"],
             "items": {
-                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/rel_con"
+                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/rel_con"
             },
             "unevaluatedItems": false
         },
         "refno": {
             "type": ["array", "null"],
             "items": {
-                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/refno"
+                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/refno"
             },
             "unevaluatedItems": false
         },
@@ -91,7 +91,7 @@
                 "null"
             ],
             "items": {
-                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/bib.json"
+                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/bib.json"
             },
             "unevaluatedItems": false
         },
@@ -108,14 +108,14 @@
                 "type": "object",
                 "allOf": [
                     {
-                        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/rel_entity_core"
+                        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/rel_entity_core"
                     }
                 ],
                 "properties": {
                     "rel": {
                         "type": "array",
                         "items": {
-                            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/enums.json#/$defs/work_work_rels"
+                            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/enums.json#/$defs/work_work_rels"
                         },
                         "unevaluatedItems": false
                     }
@@ -133,14 +133,14 @@
                 "type": "object",
                 "allOf": [
                     {
-                        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/rel_entity_core"
+                        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/rel_entity_core"
                     }
                 ],
                 "properties": {
                     "rel": {
                         "type": "array",
                         "items": {
-                            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/enums.json#/$defs/work_agent_rels"
+                            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/enums.json#/$defs/work_agent_rels"
                         },
                         "unevaluatedItems": false
                     }
@@ -158,14 +158,14 @@
                 "type": "object",
                 "allOf": [
                     {
-                        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/rel_entity_core"
+                        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/rel_entity_core"
                     }
                 ],
                 "properties": {
                     "rel": {
                         "type": "array",
                         "items": {
-                            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/enums.json#/$defs/work_place_rels"
+                            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/enums.json#/$defs/work_place_rels"
                         },
                         "unevaluatedItems": false
                     }
@@ -193,7 +193,7 @@
                 "null"
             ],
             "items": {
-                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/change_log_entry"
+                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/change_log_entry"
             },
             "unevaluatedItems": false
         }

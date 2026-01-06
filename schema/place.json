@@ -1,15 +1,15 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/place.json",
+    "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/place.json",
     "title": "Place",
     "description": "A record for a place, including both physical spaces and mental/conceptual places that may not be locatable on a geospatial system",
     "type": "object",
     "properties": {
         "ark": {
-            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/ark"
+            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/ark"
         },
         "type": {
-            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/enums.json#/$defs/place_types"
+            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/enums.json#/$defs/place_types"
         },
         "pref_name": {
             "type": "string",
@@ -24,7 +24,7 @@
             "unevaluatedItems": false        
         },
         "desc": {
-            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/summary"
+            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/summary"
         },
         "geojson": {
             "type": "array",
@@ -36,14 +36,14 @@
         "rel_con": {
             "type": ["array", "null"],
             "items": {
-                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/rel_con"
+                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/rel_con"
             },
             "unevaluatedItems": false
         },
         "refno": {
             "type": ["array", "null"],
             "items": {
-                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/refno"
+                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/refno"
             },
             "unevaluatedItems": false
         },
@@ -53,7 +53,7 @@
                 "null"
             ],
             "items": {
-                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/bib.json"
+                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/bib.json"
             },
             "unevaluatedItems": false
         },
@@ -70,14 +70,14 @@
                 "type": "object",
                 "allOf": [
                     {
-                        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/rel_entity_core"
+                        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/rel_entity_core"
                     }
                 ],
                 "properties": {
                     "rel": {
                         "type": "array",
                         "items": {
-                            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/enums.json#/$defs/place_place_rels"
+                            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/enums.json#/$defs/place_place_rels"
                         },
                         "unevaluatedItems": false
                     }
@@ -95,7 +95,7 @@
                 "null"
             ],
             "items": {
-                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/change_log_entry"
+                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/change_log_entry"
             },
             "unevaluatedItems": false
         }

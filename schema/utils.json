@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json",
+    "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json",
     "title": "Utilities",
     "description": "A collection of simple sub-schemas used across object types",
     "type": "null",
@@ -62,10 +62,10 @@
                     "minLength": 1
                 },
                 "work_id": {
-                    "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/ark"
+                    "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/ark"
                 },
                 "locus": {
-                    "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/locus"
+                    "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/locus"
                 },
                 "note": {
                     "type": ["array", "null"],
@@ -88,7 +88,7 @@
                 {
                     "properties": {
                         "work_id": {
-                            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/ark"
+                            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/ark"
                         }
                     },
                     "required": ["work_id"]
@@ -296,7 +296,7 @@
                     "minLength": 1
                 },
                 "source": {
-                    "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/enums.json#/$defs/refno_source_types"
+                    "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/enums.json#/$defs/refno_source_types"
                 }
             },
             "required": [
@@ -320,7 +320,7 @@
                     "minLength": 1
                 },
                 "source": {
-                    "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/enums.json#/$defs/rel_con_source_types"
+                    "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/enums.json#/$defs/rel_con_source_types"
                 }
             },
             "required": [
@@ -334,7 +334,7 @@
             "type": "object",
             "properties": {
                 "id": {
-                    "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/ark"
+                    "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/ark"
                 },
                 "source": {
                     "type": ["array", "null"],

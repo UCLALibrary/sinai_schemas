@@ -1,12 +1,12 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/enums.json",
+    "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/enums.json",
     "title": "Utilities",
     "description": "A collection of sub-schemas containing the controlled vocabularies and enumerated value lists for the Sinai Manuscripts Data Portal",
     "type": "null",
     "$defs": {
       "agent_agent_rels": {
-        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/controlled_term",
+        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/controlled_term",
         "enum": [
           {
             "id": "family-member",
@@ -19,7 +19,7 @@
         ]
       },
       "agent_place_rels": {
-        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/controlled_term",
+        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/controlled_term",
         "enum": [
           {
             "id": "birth",
@@ -32,7 +32,7 @@
         ]
       },
       "agent_types": {
-        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/controlled_term",
+        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/controlled_term",
         "enum": [
           {
             "id": "person",
@@ -45,7 +45,7 @@
         ]
       },
       "creator_roles": {
-        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/controlled_term",
+        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/controlled_term",
         "enum": [
           {
             "id": "author",
@@ -62,7 +62,7 @@
         ]
       },
       "excerpt_types": {
-        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/controlled_term",
+        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/controlled_term",
         "enum": [
           {
             "id": "prologue",
@@ -99,7 +99,7 @@
         ]
       },
       "genders": {
-        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/controlled_term",
+        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/controlled_term",
         "enum": [
           {
             "id": "man",
@@ -116,7 +116,7 @@
         ]
       },
       "genres": {
-        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/controlled_term",
+        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/controlled_term",
         "enum": [
           {
             "id": "account-books",
@@ -232,7 +232,7 @@
         ]
       },
       "iiif_types": {
-        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/controlled_term",
+        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/controlled_term",
         "enum": [
           {
             "id": "main",
@@ -265,7 +265,7 @@
         ]
       },
       "paracontent_types": {
-        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/controlled_term",
+        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/controlled_term",
         "enum": [
           {
             "id": "history",
@@ -286,7 +286,7 @@
         ]
       },
       "place_place_rels": {
-        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/controlled_term",
+        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/controlled_term",
         "enum": [
           {
             "id": "part-of",
@@ -295,7 +295,7 @@
         ]
       },
       "place_types": {
-        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/controlled_term",
+        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/controlled_term",
         "enum": [
             {
                 "id": "building",
@@ -410,7 +410,7 @@
         ]
       },
       "related_mss_types": {
-        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/controlled_term",
+        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/controlled_term",
         "enum": [
           {
             "id": "filiation",
@@ -428,7 +428,7 @@
       },
       "states": {
         "description": "The current state of the manuscript object",
-        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/controlled_term",
+        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/controlled_term",
         "enum": [
           {
             "id": "codex",
@@ -462,7 +462,7 @@
       },
       "states_layer": {
         "description": "The current state of the inscribed layer",
-        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/controlled_term",
+        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/controlled_term",
         "enum": [
           {
             "id": "overtext",
@@ -483,7 +483,7 @@
         ]
       },
       "supports": {
-        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/controlled_term",
+        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/controlled_term",
         "enum": [
           {
             "id": "paper",
@@ -500,7 +500,7 @@
         ]
       },
       "viscodex_types": {
-        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/controlled_term",
+        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/controlled_term",
         "enum": [
           {
             "id": "manuscript",
@@ -513,7 +513,7 @@
         ]
       },
       "work_agent_rels": {
-        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/controlled_term",
+        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/controlled_term",
         "enum": [
           {
             "id": "commemorates",
@@ -526,7 +526,7 @@
         ]
       },
       "work_place_rels": {
-        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/controlled_term",
+        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/controlled_term",
         "enum": [
           {
             "id": "composition",
@@ -535,7 +535,7 @@
         ]
       },
       "work_work_rels": {
-        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/utils.json#/$defs/controlled_term",
+        "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/controlled_term",
         "enum": [
           {
             "id": "has-part",
