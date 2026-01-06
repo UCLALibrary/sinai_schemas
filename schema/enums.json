@@ -239,8 +239,8 @@
             "label": "Main"
           },
           {
-            "id": "reordered",
-            "label": "Reordered"
+            "id": "alt",
+            "label": "Alternate"
           }
         ]
       },
