@@ -69,6 +69,10 @@
             "label": "Prologue"
           },
           {
+            "id": "heading",
+            "label": "Heading"
+          },
+          {
             "id": "incipit",
             "label": "Incipit"
           },
@@ -87,6 +91,10 @@
           {
             "id": "explicit",
             "label": "Explicit"
+          },
+          {
+            "id": "subscription",
+            "label": "Subscription"
           }
         ]
       },
