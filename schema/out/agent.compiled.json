@@ -1,0 +1,598 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/agent.json",
+  "title": "Agent",
+  "description": "A record for an agent, either an individual or an organization, capable of acting in the production of material objects or creation of conceptual works",
+  "type": "object",
+  "properties": {
+    "ark": {
+      "description": "A unique Archival Resource Key (ARK)",
+      "type": "string",
+      "pattern": "^ark:/21198/([a-z]|[0-9])+"
+    },
+    "type": {
+      "enum": [
+        {
+          "id": "person",
+          "label": "Person"
+        },
+        {
+          "id": "organization",
+          "label": "Organization"
+        }
+      ],
+      "description": "A reference to a controlled term that is stored in a database table, referenced via ID but including a human-readable label",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "label"
+      ],
+      "unevaluatedProperties": false
+    },
+    "pref_name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "alt_name": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "unevaluatedItems": false
+    },
+    "desc": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "minLength": 1
+    },
+    "gender": {
+      "enum": [
+        {
+          "id": "man",
+          "label": "Man"
+        },
+        {
+          "id": "woman",
+          "label": "Woman"
+        },
+        {
+          "id": "other",
+          "label": "Other"
+        }
+      ],
+      "description": "A reference to a controlled term that is stored in a database table, referenced via ID but including a human-readable label",
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "label": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "required": [
+        "id",
+        "label"
+      ],
+      "unevaluatedProperties": false
+    },
+    "birth": {
+      "type": "object",
+      "required": [
+        "iso"
+      ],
+      "unevaluatedProperties": false,
+      "properties": {
+        "value": {
+          "type": "string",
+          "minLength": 1
+        },
+        "iso": {
+          "type": "object",
+          "properties": {
+            "not_before": {
+              "type": "string",
+              "minLength": 4
+            },
+            "not_after": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "minLength": 4
+            }
+          },
+          "required": [
+            "not_before"
+          ],
+          "unevaluatedProperties": false
+        }
+      }
+    },
+    "death": {
+      "type": "object",
+      "required": [
+        "iso"
+      ],
+      "unevaluatedProperties": false,
+      "properties": {
+        "value": {
+          "type": "string",
+          "minLength": 1
+        },
+        "iso": {
+          "type": "object",
+          "properties": {
+            "not_before": {
+              "type": "string",
+              "minLength": 4
+            },
+            "not_after": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "minLength": 4
+            }
+          },
+          "required": [
+            "not_before"
+          ],
+          "unevaluatedProperties": false
+        }
+      }
+    },
+    "floruit": {
+      "type": "object",
+      "required": [
+        "iso"
+      ],
+      "unevaluatedProperties": false,
+      "properties": {
+        "value": {
+          "type": "string",
+          "minLength": 1
+        },
+        "iso": {
+          "type": "object",
+          "properties": {
+            "not_before": {
+              "type": "string",
+              "minLength": 4
+            },
+            "not_after": {
+              "type": [
+                "string",
+                "null"
+              ],
+              "minLength": 4
+            }
+          },
+          "required": [
+            "not_before"
+          ],
+          "unevaluatedProperties": false
+        }
+      }
+    },
+    "rel_con": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "description": "A related concept to a given entity provided by another authority file. May be connected via a skos:closeMatch property",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uri": {
+            "type": "string",
+            "format": "uri",
+            "minLength": 1
+          },
+          "source": {
+            "enum": [
+              "HAF",
+              "LoC",
+              "Perseus",
+              "Pinakes",
+              "Pleiades",
+              "Syriaca",
+              "VIAF"
+            ]
+          }
+        },
+        "required": [
+          "label",
+          "uri",
+          "source"
+        ],
+        "unevaluatedProperties": false
+      },
+      "unevaluatedItems": false
+    },
+    "refno": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "description": "A reference number in a standard reference work, such as the Corpus Clavium Graecorum (CPG)",
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string",
+            "minLength": 1
+          },
+          "idno": {
+            "type": "string",
+            "minLength": 1
+          },
+          "source": {
+            "enum": [
+              "CPG",
+              "CPL",
+              "TLG"
+            ]
+          }
+        },
+        "required": [
+          "label",
+          "idno",
+          "source"
+        ],
+        "unevaluatedProperties": false
+      },
+      "unevaluatedItems": false
+    },
+    "bib": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/jsonschemas/bib.json",
+        "title": "Bibliography",
+        "description": "A bibliographic citation connected with an object or entity",
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "shortcode": {
+            "type": "string"
+          },
+          "citation": {
+            "type": "string"
+          },
+          "type": {
+            "description": "A reference to a controlled term that is stored in a database table, referenced via ID but including a human-readable label",
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string",
+                "minLength": 1
+              },
+              "label": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "required": [
+              "id",
+              "label"
+            ],
+            "unevaluatedProperties": false
+          },
+          "range": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1
+          },
+          "alt_shelf": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1
+          },
+          "url": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "minLength": 1
+          },
+          "note": {
+            "type": [
+              "array",
+              "null"
+            ],
+            "items": {
+              "type": "string"
+            },
+            "unevaluatedItems": false
+          }
+        },
+        "required": [
+          "id",
+          "shortcode",
+          "citation",
+          "type"
+        ],
+        "if": {
+          "properties": {
+            "type": {
+              "const": {
+                "id": "otherdigversion",
+                "label": "Other Digital Version"
+              }
+            }
+          },
+          "required": [
+            "type"
+          ]
+        },
+        "then": {
+          "properties": {
+            "url": {
+              "type": "string",
+              "minLength": 1
+            },
+            "id": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          "required": [
+            "id",
+            "shortcode",
+            "citation",
+            "type",
+            "url"
+          ]
+        },
+        "unevaluatedProperties": false
+      },
+      "unevaluatedItems": false
+    },
+    "note": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      },
+      "unevaluatedItems": false
+    },
+    "rel_agent": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "object",
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "description": "A unique Archival Resource Key (ARK)",
+                "type": "string",
+                "pattern": "^ark:/21198/([a-z]|[0-9])+"
+              },
+              "source": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                },
+                "unevaluatedItems": false
+              }
+            },
+            "required": [
+              "id"
+            ]
+          }
+        ],
+        "properties": {
+          "rel": {
+            "type": "array",
+            "items": {
+              "enum": [
+                {
+                  "id": "family-member",
+                  "label": "Family Member"
+                },
+                {
+                  "id": "member-of",
+                  "label": "Member Of"
+                }
+              ],
+              "description": "A reference to a controlled term that is stored in a database table, referenced via ID but including a human-readable label",
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "label": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "id",
+                "label"
+              ],
+              "unevaluatedProperties": false
+            },
+            "unevaluatedItems": false
+          }
+        },
+        "required": [
+          "rel"
+        ],
+        "unevaluatedProperties": false
+      },
+      "unevaluatedItems": false
+    },
+    "rel_place": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "object",
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "id": {
+                "description": "A unique Archival Resource Key (ARK)",
+                "type": "string",
+                "pattern": "^ark:/21198/([a-z]|[0-9])+"
+              },
+              "source": {
+                "type": [
+                  "array",
+                  "null"
+                ],
+                "items": {
+                  "type": "string"
+                },
+                "unevaluatedItems": false
+              }
+            },
+            "required": [
+              "id"
+            ]
+          }
+        ],
+        "properties": {
+          "rel": {
+            "type": "array",
+            "items": {
+              "enum": [
+                {
+                  "id": "birth",
+                  "label": "Place of Birth"
+                },
+                {
+                  "id": "death",
+                  "label": "Place of Death"
+                }
+              ],
+              "description": "A reference to a controlled term that is stored in a database table, referenced via ID but including a human-readable label",
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "label": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "id",
+                "label"
+              ],
+              "unevaluatedProperties": false
+            },
+            "unevaluatedItems": false
+          }
+        },
+        "required": [
+          "rel"
+        ],
+        "unevaluatedProperties": false
+      },
+      "unevaluatedItems": false
+    },
+    "internal": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "string"
+      },
+      "unevaluatedItems": false
+    },
+    "cataloguer": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "items": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "string",
+            "minLength": 1
+          },
+          "contributor": {
+            "description": "The person responsible for the intellectual contributions made to the record via this change",
+            "type": "string",
+            "minLength": 1,
+            "$comment": "TBD: Possibly revise the format or restrict to a set of ID-like values rather than entering name forms"
+          },
+          "added_by": {
+            "description": "The user account responsible for editing the JSON record, likely supplied by the content management system",
+            "type": "string",
+            "minLength": 1,
+            "$comment": "TBD: Possibly revise the format or restrict to a set of ID-like values rather than entering name forms"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "message",
+          "added_by",
+          "timestamp"
+        ],
+        "unevaluatedProperties": false
+      },
+      "unevaluatedItems": false
+    }
+  },
+  "required": [
+    "ark",
+    "type",
+    "pref_name"
+  ],
+  "unevaluatedProperties": false
+}
