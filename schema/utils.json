@@ -19,9 +19,11 @@
                     },
                     "contributor": {
                         "description": "The person responsible for the intellectual contributions made to the record via this change",
-                        "type": "string",
-                        "minLength": 1,
-                        "$comment": "TBD: Possibly revise the format or restrict to a set of ID-like values rather than entering name forms"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "unevaluatedItems": false
                     },
                     "added_by": {
                         "description": "The user account responsible for editing the JSON record, likely supplied by the content management system",

@@ -511,7 +511,11 @@
                         "type": "string"
                     },
                     "contributor": {
-                        "type": "string"
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "unevaluatedItems": false
                     },
                     "added_by": {
                         "type": "string"
