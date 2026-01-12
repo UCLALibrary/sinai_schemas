@@ -62,8 +62,8 @@ for file in files:
             # evaluate against the schema, report by file name only if there are errors
             result = schema.evaluate(jschon.json.JSON(rec))
             if(not(result.output('flag')['valid'])):
-                validation_result = result.output('basic')
-                validation_result["filename"] = file
+                validation_result = {"filename": file}
+                validation_result = validation_result | result.output('basic')
                 
                 output.append(validation_result)
 
