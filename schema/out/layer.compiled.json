@@ -737,20 +737,6 @@
         "type": "object",
         "properties": {
           "type": {
-            "enum": [
-              {
-                "id": "filiation",
-                "label": "Filiation"
-              },
-              {
-                "id": "disjecta",
-                "label": "Disjecta Membra"
-              },
-              {
-                "id": "reconstructed-from",
-                "label": "Reconstructed From"
-              }
-            ],
             "description": "A reference to a controlled term that is stored in a database table, referenced via ID but including a human-readable label",
             "type": "object",
             "properties": {
