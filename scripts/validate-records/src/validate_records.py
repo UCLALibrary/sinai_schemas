@@ -4,13 +4,13 @@ import jschon, json, requests, os, sys
 CONSTANTS
 '''
 OUTPUT_FILE = './log.json'
-# PATH_TO_RECORDS = '/Users/wpotter/Documents/GitHub/sinai_metadata/portal_data/works/'
-AGENTS_SCHEMA_URL = 'https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/tnb_docs/agent.schema.json'
-WORKS_SCHEMA_URL = 'https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/tnb_docs/work.schema.json'
-MSOBJS_SCHEMA_URL = 'https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/tnb_docs/ms-obj.schema.json'
-LAYERS_SCHEMA_URL = 'https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/tnb_docs/layer.schema.json'
-TXTUNITS_SCHEMA_URL = 'https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/master/data-model/tnb_docs/text_unit.schema.json'
-EXPORT_SCHEMA_URL = 'https://raw.githubusercontent.com/UCLALibrary/sinai_metadata/refs/heads/master/data-model/jsonschemas/smdl.json'
+
+AGENTS_SCHEMA_URL = 'https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/out/agent.compiled.json'
+WORKS_SCHEMA_URL = 'https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/out/work.compiled.json'
+MSOBJS_SCHEMA_URL = 'https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/out/ms_obj.compiled.json'
+LAYERS_SCHEMA_URL = 'https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/out/layer.compiled.json'
+TXTUNITS_SCHEMA_URL = 'https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/out/text_unit.compiled.json'
+EXPORT_SCHEMA_URL = 'https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/smdl.json'
 
 VALID_SCHEMA_OPTIONS = ["agents", "works", "msobjs", "layers", "txtunits", "export"]
 # declare a json schema catalog
