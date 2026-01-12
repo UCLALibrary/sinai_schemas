@@ -76,5 +76,5 @@ print(output_location)
 os.makedirs(os.path.dirname(output_location), exist_ok=True)
 
 print(f"Saving validation log to {output_location}")
-with open(OUTPUT_FILE, 'w+') as f:
+with open(output_location, 'w+') as f:
     json.dump(output, f, indent=2)
