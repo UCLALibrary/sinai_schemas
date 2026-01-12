@@ -86,7 +86,7 @@
                     "rel": {
                         "type": "array",
                         "items": {
-                            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/enums.json#/$defs/agent_agent_rels"
+                            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/enums.json#/$defs/controlled_term"
                         },
                         "unevaluatedItems": false
                     }
@@ -111,7 +111,7 @@
                     "rel": {
                         "type": "array",
                         "items": {
-                            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/enums.json#/$defs/agent_place_rels"
+                            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/enums.json#/$defs/controlled_term"
                         },
                         "unevaluatedItems": false
                     }

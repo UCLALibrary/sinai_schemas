@@ -6,6 +6,8 @@
     "type": "null",
     "$defs": {
       "agent_agent_rels": {
+        "deprecated": true,
+        "$comment": "Deprecated as of 2026-01-12. Many enumerated controlled terms changed to be managed editorially via content management system rather than declared in-schema.",
         "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/controlled_term",
         "enum": [
           {
@@ -19,6 +21,8 @@
         ]
       },
       "agent_place_rels": {
+        "deprecated": true,
+        "$comment": "Deprecated as of 2026-01-12. Many enumerated controlled terms changed to be managed editorially via content management system rather than declared in-schema.",
         "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/controlled_term",
         "enum": [
           {
@@ -116,6 +120,8 @@
         ]
       },
       "genres": {
+        "deprecated": true,
+        "$comment": "Deprecated as of 2026-01-12. Many enumerated controlled terms changed to be managed editorially via content management system rather than declared in-schema.",
         "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/controlled_term",
         "enum": [
           {
@@ -286,6 +292,8 @@
         ]
       },
       "place_place_rels": {
+        "deprecated": true,
+        "$comment": "Deprecated as of 2026-01-12. Many enumerated controlled terms changed to be managed editorially via content management system rather than declared in-schema.",
         "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/controlled_term",
         "enum": [
           {
@@ -295,6 +303,8 @@
         ]
       },
       "place_types": {
+        "deprecated": true,
+        "$comment": "Deprecated as of 2026-01-12. Many enumerated controlled terms changed to be managed editorially via content management system rather than declared in-schema.",
         "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/controlled_term",
         "enum": [
             {
@@ -392,6 +402,8 @@
         ]
     },
       "refno_source_types": {
+        "deprecated": true,
+        "$comment": "Deprecated as of 2026-01-12. Many enumerated controlled terms changed to be managed editorially via content management system rather than declared in-schema.",
         "enum": [
           "CPG",
           "CPL",
@@ -399,6 +411,8 @@
         ]
       },
       "rel_con_source_types": {
+        "deprecated": true,
+        "$comment": "Deprecated as of 2026-01-12. Many enumerated controlled terms changed to be managed editorially via content management system rather than declared in-schema.",
         "enum": [
           "HAF",
           "LoC",
@@ -410,6 +424,8 @@
         ]
       },
       "related_mss_types": {
+        "deprecated": true,
+        "$comment": "Deprecated as of 2026-01-12. Many enumerated controlled terms changed to be managed editorially via content management system rather than declared in-schema.",
         "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/controlled_term",
         "enum": [
           {
@@ -500,6 +516,8 @@
         ]
       },
       "viscodex_types": {
+        "deprecated": true,
+        "$comment": "Deprecated as of 2026-01-12. Many enumerated controlled terms changed to be managed editorially via content management system rather than declared in-schema.",
         "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/controlled_term",
         "enum": [
           {
@@ -513,6 +531,8 @@
         ]
       },
       "work_agent_rels": {
+        "deprecated": true,
+        "$comment": "Deprecated as of 2026-01-12. Many enumerated controlled terms changed to be managed editorially via content management system rather than declared in-schema.",
         "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/controlled_term",
         "enum": [
           {
@@ -526,6 +546,8 @@
         ]
       },
       "work_place_rels": {
+        "deprecated": true,
+        "$comment": "Deprecated as of 2026-01-12. Many enumerated controlled terms changed to be managed editorially via content management system rather than declared in-schema.",
         "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/controlled_term",
         "enum": [
           {
@@ -535,6 +557,8 @@
         ]
       },
       "work_work_rels": {
+        "deprecated": true,
+        "$comment": "Deprecated as of 2026-01-12. Many enumerated controlled terms changed to be managed editorially via content management system rather than declared in-schema.",
         "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/controlled_term",
         "enum": [
           {

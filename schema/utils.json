@@ -253,7 +253,7 @@
                     "type": "string"
                 },
                 "source": {
-                    "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/enums.json#/$defs/refno_source_types"
+                    "type": "string"
                 }
             },
             "required": [
@@ -275,7 +275,7 @@
                     "format": "uri"
                 },
                 "source": {
-                    "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/enums.json#/$defs/rel_con_source_types"
+                    "type": "string"
                 }
             },
             "required": [

@@ -9,7 +9,7 @@
             "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/ark"
         },
         "type": {
-            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/enums.json#/$defs/place_types"
+            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/enums.json#/$defs/controlled_term"
         },
         "pref_name": {
             "type": "string"
@@ -72,7 +72,7 @@
                     "rel": {
                         "type": "array",
                         "items": {
-                            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/enums.json#/$defs/place_place_rels"
+                            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/enums.json#/$defs/controlled_term"
                         },
                         "unevaluatedItems": false
                     }

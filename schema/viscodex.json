@@ -6,7 +6,7 @@
     "type": "object",
         "properties": {
             "type": {
-                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/enums.json#/$defs/viscodex_types"
+                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/controlled_term"
             },
             "label": {
                 "type": "string"
