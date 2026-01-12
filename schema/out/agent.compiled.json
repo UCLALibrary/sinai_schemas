@@ -182,15 +182,7 @@
             "format": "uri"
           },
           "source": {
-            "enum": [
-              "HAF",
-              "LoC",
-              "Perseus",
-              "Pinakes",
-              "Pleiades",
-              "Syriaca",
-              "VIAF"
-            ]
+            "type": "string"
           }
         },
         "required": [
@@ -215,11 +207,7 @@
             "type": "string"
           },
           "source": {
-            "enum": [
-              "CPG",
-              "CPL",
-              "TLG"
-            ]
+            "type": "string"
           }
         },
         "required": [
@@ -362,16 +350,6 @@
           "rel": {
             "type": "array",
             "items": {
-              "enum": [
-                {
-                  "id": "family-member",
-                  "label": "Family Member"
-                },
-                {
-                  "id": "member-of",
-                  "label": "Member Of"
-                }
-              ],
               "description": "A reference to a controlled term that is stored in a database table, referenced via ID but including a human-readable label",
               "type": "object",
               "properties": {
@@ -428,16 +406,6 @@
           "rel": {
             "type": "array",
             "items": {
-              "enum": [
-                {
-                  "id": "birth",
-                  "label": "Place of Birth"
-                },
-                {
-                  "id": "death",
-                  "label": "Place of Death"
-                }
-              ],
               "description": "A reference to a controlled term that is stored in a database table, referenced via ID but including a human-readable label",
               "type": "object",
               "properties": {

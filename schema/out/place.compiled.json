@@ -11,100 +11,6 @@
       "pattern": "^ark:/21198/([a-z]|[0-9])+"
     },
     "type": {
-      "enum": [
-        {
-          "id": "building",
-          "label": "Building"
-        },
-        {
-          "id": "church",
-          "label": "Church"
-        },
-        {
-          "id": "composite",
-          "label": "Composite"
-        },
-        {
-          "id": "designated-space",
-          "label": "Designated Space"
-        },
-        {
-          "id": "diocese",
-          "label": "Diocese"
-        },
-        {
-          "id": "fortification",
-          "label": "Fortification"
-        },
-        {
-          "id": "island",
-          "label": "Island"
-        },
-        {
-          "id": "madrasa",
-          "label": "Madrasa"
-        },
-        {
-          "id": "monastery",
-          "label": "Monastery"
-        },
-        {
-          "id": "mosque",
-          "label": "Mosque"
-        },
-        {
-          "id": "mountain",
-          "label": "Mountain"
-        },
-        {
-          "id": "natural feature",
-          "label": "Natural Feature"
-        },
-        {
-          "id": "open-water",
-          "label": "Open Water"
-        },
-        {
-          "id": "parish",
-          "label": "Parish"
-        },
-        {
-          "id": "province",
-          "label": "Province"
-        },
-        {
-          "id": "quarter",
-          "label": "Quarter"
-        },
-        {
-          "id": "region",
-          "label": "Region"
-        },
-        {
-          "id": "river",
-          "label": "River"
-        },
-        {
-          "id": "settlement",
-          "label": "Settlement"
-        },
-        {
-          "id": "state",
-          "label": "State"
-        },
-        {
-          "id": "synagogue",
-          "label": "Synagogue"
-        },
-        {
-          "id": "temple",
-          "label": "Temple"
-        },
-        {
-          "id": "unknown",
-          "label": "Unknown"
-        }
-      ],
       "description": "A reference to a controlled term that is stored in a database table, referenced via ID but including a human-readable label",
       "type": "object",
       "properties": {
@@ -1643,15 +1549,7 @@
             "format": "uri"
           },
           "source": {
-            "enum": [
-              "HAF",
-              "LoC",
-              "Perseus",
-              "Pinakes",
-              "Pleiades",
-              "Syriaca",
-              "VIAF"
-            ]
+            "type": "string"
           }
         },
         "required": [
@@ -1676,11 +1574,7 @@
             "type": "string"
           },
           "source": {
-            "enum": [
-              "CPG",
-              "CPL",
-              "TLG"
-            ]
+            "type": "string"
           }
         },
         "required": [
@@ -1823,12 +1717,6 @@
           "rel": {
             "type": "array",
             "items": {
-              "enum": [
-                {
-                  "id": "part-of",
-                  "label": "Part Of"
-                }
-              ],
               "description": "A reference to a controlled term that is stored in a database table, referenced via ID but including a human-readable label",
               "type": "object",
               "properties": {

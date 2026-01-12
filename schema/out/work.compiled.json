@@ -46,104 +46,6 @@
     "genre": {
       "type": "array",
       "items": {
-        "enum": [
-          {
-            "id": "account-books",
-            "label": "Account books"
-          },
-          {
-            "id": "apocrypha",
-            "label": "Apocrypha"
-          },
-          {
-            "id": "apophthegmata",
-            "label": "Apophthegmata"
-          },
-          {
-            "id": "biblical-texts",
-            "label": "Biblical texts"
-          },
-          {
-            "id": "blessings",
-            "label": "Blessings"
-          },
-          {
-            "id": "calendars",
-            "label": "Calendars"
-          },
-          {
-            "id": "canon-law",
-            "label": "Canon law"
-          },
-          {
-            "id": "charters",
-            "label": "Charters"
-          },
-          {
-            "id": "commentaries",
-            "label": "Commentaries"
-          },
-          {
-            "id": "dictionaries",
-            "label": "Dictionaries"
-          },
-          {
-            "id": "gospel-books",
-            "label": "Gospel books"
-          },
-          {
-            "id": "hagiographies",
-            "label": "Hagiographies"
-          },
-          {
-            "id": "historical-works",
-            "label": "Historical works"
-          },
-          {
-            "id": "hymnals",
-            "label": "Hymnals"
-          },
-          {
-            "id": "lectionaries",
-            "label": "Lectionaries"
-          },
-          {
-            "id": "liturgical-texts",
-            "label": "Liturgical texts"
-          },
-          {
-            "id": "martyrologies",
-            "label": "Martyrologies"
-          },
-          {
-            "id": "mimars",
-            "label": "Mimars"
-          },
-          {
-            "id": "philosophical-works",
-            "label": "Philosophical works"
-          },
-          {
-            "id": "poetry",
-            "label": "Poetry"
-          },
-          {
-            "id": "prayers",
-            "label": "Prayers"
-          },
-          {
-            "id": "scientific-works",
-            "label": "Scientific works"
-          },
-          {
-            "id": "sermons",
-            "label": "Sermons"
-          },
-          {
-            "id": "theological-works",
-            "label": "Theological works"
-          }
-        ],
         "description": "A reference to a controlled term that is stored in a database table, referenced via ID but including a human-readable label",
         "type": "object",
         "properties": {
@@ -301,15 +203,7 @@
             "format": "uri"
           },
           "source": {
-            "enum": [
-              "HAF",
-              "LoC",
-              "Perseus",
-              "Pinakes",
-              "Pleiades",
-              "Syriaca",
-              "VIAF"
-            ]
+            "type": "string"
           }
         },
         "required": [
@@ -334,11 +228,7 @@
             "type": "string"
           },
           "source": {
-            "enum": [
-              "CPG",
-              "CPL",
-              "TLG"
-            ]
+            "type": "string"
           }
         },
         "required": [
@@ -481,24 +371,6 @@
           "rel": {
             "type": "array",
             "items": {
-              "enum": [
-                {
-                  "id": "has-part",
-                  "label": "Has Part"
-                },
-                {
-                  "id": "has-version",
-                  "label": "Has Version"
-                },
-                {
-                  "id": "part-of",
-                  "label": "Part Of"
-                },
-                {
-                  "id": "version-of",
-                  "label": "Version Of"
-                }
-              ],
               "description": "A reference to a controlled term that is stored in a database table, referenced via ID but including a human-readable label",
               "type": "object",
               "properties": {
@@ -555,16 +427,6 @@
           "rel": {
             "type": "array",
             "items": {
-              "enum": [
-                {
-                  "id": "commemorates",
-                  "label": "Commemorates"
-                },
-                {
-                  "id": "addressee",
-                  "label": "Addressee"
-                }
-              ],
               "description": "A reference to a controlled term that is stored in a database table, referenced via ID but including a human-readable label",
               "type": "object",
               "properties": {
@@ -621,12 +483,6 @@
           "rel": {
             "type": "array",
             "items": {
-              "enum": [
-                {
-                  "id": "composition",
-                  "label": "Place of Composition"
-                }
-              ],
               "description": "A reference to a controlled term that is stored in a database table, referenced via ID but including a human-readable label",
               "type": "object",
               "properties": {
