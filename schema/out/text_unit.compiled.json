@@ -696,6 +696,184 @@
       },
       "unevaluatedItems": false
     },
+    "assoc_date": {
+      "type": "array",
+      "items": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/assoc_date.json",
+        "title": "Associated Date",
+        "description": "A date associated with an object, either attested or inferred through indirect means (paleography, etc.)",
+        "type": "object",
+        "allOf": [
+          {
+            "type": "object",
+            "properties": {
+              "value": {
+                "type": "string"
+              },
+              "iso": {
+                "type": "object",
+                "properties": {
+                  "not_before": {
+                    "type": "string",
+                    "minLength": 4
+                  },
+                  "not_after": {
+                    "type": "string",
+                    "minLength": 4
+                  }
+                },
+                "required": [
+                  "not_before"
+                ],
+                "unevaluatedProperties": false
+              }
+            },
+            "required": [
+              "value"
+            ]
+          }
+        ],
+        "properties": {
+          "type": {
+            "description": "A reference to a controlled term that is stored in a database table, referenced via ID but including a human-readable label",
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "label"
+            ],
+            "unevaluatedProperties": false
+          },
+          "as_written": {
+            "type": "string"
+          },
+          "note": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "unevaluatedItems": false
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "unevaluatedProperties": false
+      },
+      "unevaluatedItems": false
+    },
+    "assoc_name": {
+      "type": "array",
+      "items": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/assoc_name.json",
+        "title": "Associated Name",
+        "description": "A person, group, or organization entity (i.e., Agent) connected with an object via a given role",
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "A unique Archival Resource Key (ARK)",
+            "type": "string",
+            "pattern": "^ark:/21198/([a-z]|[0-9])+"
+          },
+          "value": {
+            "type": "string"
+          },
+          "as_written": {
+            "type": "string"
+          },
+          "role": {
+            "description": "A reference to a controlled term that is stored in a database table, referenced via ID but including a human-readable label",
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "label"
+            ],
+            "unevaluatedProperties": false
+          },
+          "note": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "unevaluatedItems": false
+          }
+        },
+        "required": [
+          "role"
+        ],
+        "unevaluatedProperties": false
+      },
+      "unevaluatedItems": false
+    },
+    "assoc_place": {
+      "type": "array",
+      "items": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "$id": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/assoc_place.json",
+        "title": "Associated Place",
+        "description": "A place entity connected with an object via an event in the object's life cycle",
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "A unique Archival Resource Key (ARK)",
+            "type": "string",
+            "pattern": "^ark:/21198/([a-z]|[0-9])+"
+          },
+          "value": {
+            "type": "string"
+          },
+          "as_written": {
+            "type": "string"
+          },
+          "event": {
+            "description": "A reference to a controlled term that is stored in a database table, referenced via ID but including a human-readable label",
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "label"
+            ],
+            "unevaluatedProperties": false
+          },
+          "note": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "unevaluatedItems": false
+          }
+        },
+        "required": [
+          "event"
+        ],
+        "unevaluatedProperties": false
+      },
+      "unevaluatedItems": false
+    },
     "features": {
       "type": "array",
       "items": {
