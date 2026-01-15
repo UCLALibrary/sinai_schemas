@@ -43,6 +43,27 @@
             },
             "unevaluatedItems": false
         },
+        "assoc_date": {
+            "type": "array",
+            "items": {
+                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/assoc_date.json"
+            },
+            "unevaluatedItems": false
+        },
+        "assoc_name": {
+            "type": "array",
+            "items": {
+                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/assoc_name.json"
+            },
+            "unevaluatedItems": false
+        },
+        "assoc_place": {
+            "type": "array",
+            "items": {
+                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/assoc_place.json"
+            },
+            "unevaluatedItems": false
+        },
         "features": {
             "type": "array",
             "items": {
