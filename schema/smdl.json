@@ -1256,10 +1256,12 @@
                                 "type": "object",
                                 "properties": {
                                     "not_before": {
-                                        "type": "integer"
+                                        "type": "string", 
+                                        "minLength": 4
                                     },
                                     "not_after": {
-                                        "type": "integer"
+                                        "type": "string",
+                                        "minLength": 4
                                     }
                                 }
                             }
@@ -1325,24 +1327,28 @@
                     "unevaluatedItems": false     
                 },
                 "refno": {
-                    "type": "object",
-                    "properties": {
-                        "label": {
-                            "type": "string"
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "label": {
+                                "type": "string"
+                            },
+                            "idno": {
+                                "type": "string"
+                            },
+                            "source": {
+                                "type": "string"
+                            }
                         },
-                        "idno": {
-                            "type": "string"
-                        },
-                        "source": {
-                            "type": "string"
-                        }
+                        "required": [
+                            "label",
+                            "idno",
+                            "source"
+                        ],
+                        "unevaluatedProperties": false
                     },
-                    "required": [
-                        "label",
-                        "idno",
-                        "source"
-                    ],
-                    "unevaluatedProperties": false
+                    "unevaluatedItems": false
                 }
             }
         },
