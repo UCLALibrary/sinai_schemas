@@ -99,6 +99,14 @@
           {
             "id": "subscription",
             "label": "Subscription"
+          },
+                    {
+            "id": "epilogue",
+            "label": "Epilogue"
+          },
+          {
+            "id": "passage",
+            "label": "Passage"
           }
         ]
       },
