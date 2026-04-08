@@ -24,13 +24,7 @@
         "desc": {
             "type": "string"
         },
-        "geojson": {
-            "type": "array",
-            "items": {
-                "$ref": "https://geojson.org/schema/GeoJSON.json"
-            },
-            "unevaluatedItems": false
-        },
+        "geojson": {},
         "rel_con": {
             "type": "array",
             "items": {
