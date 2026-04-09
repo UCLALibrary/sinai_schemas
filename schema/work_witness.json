@@ -6,20 +6,15 @@
     "type": "object",
     "properties": {
         "work": {
-            "oneOf": [
-                {
-                    "type": "object",
+            "type": "object",
                     "properties": {
                         "id": {
-                            "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/ark"
-                        }
-                    },
-                    "required": ["id"],
-                    "unevaluatedProperties": false
-                },
-                {
-                    "type": "object",
-                    "properties": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "https://raw.githubusercontent.com/UCLALibrary/sinai_schemas/main/schema/utils.json#/$defs/ark"
+                            },
+                            "unevaluatedItems": false
+                        },
                         "desc_title": {
                             "type": "string"
                         },
@@ -38,12 +33,8 @@
                             "unevaluatedItems": false     
                         }
                     },
-                    "required": [
-                        "desc_title"
-                    ],
+                    "required": ["desc_title"],
                     "unevaluatedProperties": false
-                }
-            ]
         },
         "alt_title": {
             "description": "An alternative title providing witness-specific information about the work",
