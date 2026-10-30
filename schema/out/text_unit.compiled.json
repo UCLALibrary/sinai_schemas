@@ -54,64 +54,63 @@
         "type": "object",
         "properties": {
           "work": {
-            "oneOf": [
-              {
-                "type": "object",
-                "properties": {
-                  "id": {
-                    "description": "A unique Archival Resource Key (ARK)",
-                    "type": "string",
-                    "pattern": "^ark:/21198/([a-z]|[0-9])+"
-                  }
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "array",
+                "items": {
+                  "description": "A unique Archival Resource Key (ARK)",
+                  "type": "string",
+                  "pattern": "^ark:/21198/([a-z]|[0-9])+"
                 },
-                "required": [
-                  "id"
-                ],
-                "unevaluatedProperties": false
+                "unevaluatedItems": false
               },
-              {
-                "type": "object",
-                "properties": {
-                  "desc_title": {
-                    "type": "string"
-                  },
-                  "creator": {
-                    "type": "array",
-                    "items": {
-                      "description": "A unique Archival Resource Key (ARK)",
-                      "type": "string",
-                      "pattern": "^ark:/21198/([a-z]|[0-9])+"
-                    },
-                    "unevaluatedItems": false
-                  },
-                  "genre": {
-                    "type": "array",
-                    "items": {
-                      "description": "A reference to a controlled term that is stored in a database table, referenced via ID but including a human-readable label",
-                      "type": "object",
-                      "properties": {
-                        "id": {
-                          "type": "string"
-                        },
-                        "label": {
-                          "type": "string"
-                        }
-                      },
-                      "required": [
-                        "id",
-                        "label"
-                      ],
-                      "unevaluatedProperties": false
-                    },
-                    "unevaluatedItems": false
-                  }
+              "desc_title": {
+                "type": "string"
+              },
+              "creator": {
+                "type": "array",
+                "items": {
+                  "description": "A unique Archival Resource Key (ARK)",
+                  "type": "string",
+                  "pattern": "^ark:/21198/([a-z]|[0-9])+"
                 },
-                "required": [
-                  "desc_title"
-                ],
-                "unevaluatedProperties": false
+                "unevaluatedItems": false
+              },
+              "genre": {
+                "type": "array",
+                "items": {
+                  "description": "A reference to a controlled term that is stored in a database table, referenced via ID but including a human-readable label",
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string"
+                    },
+                    "label": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "label"
+                  ],
+                  "unevaluatedProperties": false
+                },
+                "unevaluatedItems": false
               }
-            ]
+            },
+            "required": [
+              "desc_title"
+            ],
+            "dependentSchemas": {
+              "id": {
+                "properties": {
+                  "creator": false,
+                  "genre": false
+                }
+              }
+            },
+            "unevaluatedProperties": false
           },
           "alt_title": {
             "description": "An alternative title providing witness-specific information about the work",
