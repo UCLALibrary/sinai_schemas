@@ -165,6 +165,14 @@
                     {
                       "id": "subscription",
                       "label": "Subscription"
+                    },
+                    {
+                      "id": "epilogue",
+                      "label": "Epilogue"
+                    },
+                    {
+                      "id": "passage",
+                      "label": "Passage"
                     }
                   ],
                   "description": "A reference to a controlled term that is stored in a database table, referenced via ID but including a human-readable label",
