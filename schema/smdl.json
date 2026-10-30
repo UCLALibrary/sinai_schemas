@@ -1359,7 +1359,35 @@
                         "type": "string"
                     },
                     "work": {
-                        "$ref": "#/$defs/work_record"
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "array",
+                                "items": {
+                                    "$ref": "#/$defs/work_record"
+                                },
+                                "unevaluatedItems": false
+                            },
+                            "desc_title": {
+                                "type": "string"
+                            },
+                            "creator": {
+                                "$ref": "#/$defs/work_record/properties/creator"
+                            },
+                            "genre": {
+                                "$ref": "#/$defs/work_record/properties/genre"
+                            }
+                        },
+                        "required": ["desc_title"],
+                        "dependentSchemas": {
+                            "id": {
+                                "properties": {
+                                    "creator": false,
+                                    "genre": false
+                                }
+                            }
+                        },
+                        "unevaluatedProperties": false
                     },
                     "alt_title": {
                         "type": "string"
